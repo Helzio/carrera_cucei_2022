@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+
+class PasswordTextInput extends StatefulWidget {
+  const PasswordTextInput({Key? key}) : super(key: key);
+
+  @override
+  _PasswordTextInputState createState() => _PasswordTextInputState();
+}
+
+class _PasswordTextInputState extends State<PasswordTextInput> {
+  bool obscureText = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      cursorColor: Colors.white,
+      textInputAction: TextInputAction.done,
+      onChanged: (String password) {},
+      obscureText: obscureText,
+      keyboardType: TextInputType.visiblePassword,
+      decoration: InputDecoration(
+        isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        labelText: "Password:",
+        counterText: "",
+        labelStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 16,
+        ),
+        suffixIconColor: Colors.white,
+        suffixIcon: IconButton(
+          icon: Icon(
+            obscureText ? Icons.visibility : Icons.visibility_off,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            setState(() {
+              obscureText = !obscureText;
+            });
+          },
+        ),
+      ),
+      textAlignVertical: TextAlignVertical.center,
+    );
+  }
+}
