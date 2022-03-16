@@ -29,6 +29,10 @@ class _$LoginStateTearOff {
   _Loading loading() {
     return const _Loading();
   }
+
+  _Registro registro() {
+    return const _Registro();
+  }
 }
 
 /// @nodoc
@@ -41,6 +45,7 @@ mixin _$LoginState {
     required TResult Function() initial,
     required TResult Function() showing,
     required TResult Function() loading,
+    required TResult Function() registro,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +53,7 @@ mixin _$LoginState {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +61,7 @@ mixin _$LoginState {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +70,7 @@ mixin _$LoginState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Showing value) showing,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Registro value) registro,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +78,7 @@ mixin _$LoginState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +86,7 @@ mixin _$LoginState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +149,7 @@ class _$_Initial extends _Initial {
     required TResult Function() initial,
     required TResult Function() showing,
     required TResult Function() loading,
+    required TResult Function() registro,
   }) {
     return initial();
   }
@@ -149,6 +160,7 @@ class _$_Initial extends _Initial {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
   }) {
     return initial?.call();
   }
@@ -159,6 +171,7 @@ class _$_Initial extends _Initial {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -173,6 +186,7 @@ class _$_Initial extends _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Showing value) showing,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Registro value) registro,
   }) {
     return initial(this);
   }
@@ -183,6 +197,7 @@ class _$_Initial extends _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +208,7 @@ class _$_Initial extends _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -248,6 +264,7 @@ class _$_Showing extends _Showing {
     required TResult Function() initial,
     required TResult Function() showing,
     required TResult Function() loading,
+    required TResult Function() registro,
   }) {
     return showing();
   }
@@ -258,6 +275,7 @@ class _$_Showing extends _Showing {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
   }) {
     return showing?.call();
   }
@@ -268,6 +286,7 @@ class _$_Showing extends _Showing {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
     required TResult orElse(),
   }) {
     if (showing != null) {
@@ -282,6 +301,7 @@ class _$_Showing extends _Showing {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Showing value) showing,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Registro value) registro,
   }) {
     return showing(this);
   }
@@ -292,6 +312,7 @@ class _$_Showing extends _Showing {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
   }) {
     return showing?.call(this);
   }
@@ -302,6 +323,7 @@ class _$_Showing extends _Showing {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
     required TResult orElse(),
   }) {
     if (showing != null) {
@@ -357,6 +379,7 @@ class _$_Loading extends _Loading {
     required TResult Function() initial,
     required TResult Function() showing,
     required TResult Function() loading,
+    required TResult Function() registro,
   }) {
     return loading();
   }
@@ -367,6 +390,7 @@ class _$_Loading extends _Loading {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
   }) {
     return loading?.call();
   }
@@ -377,6 +401,7 @@ class _$_Loading extends _Loading {
     TResult Function()? initial,
     TResult Function()? showing,
     TResult Function()? loading,
+    TResult Function()? registro,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -391,6 +416,7 @@ class _$_Loading extends _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Showing value) showing,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Registro value) registro,
   }) {
     return loading(this);
   }
@@ -401,6 +427,7 @@ class _$_Loading extends _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
   }) {
     return loading?.call(this);
   }
@@ -411,6 +438,7 @@ class _$_Loading extends _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Showing value)? showing,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -423,4 +451,119 @@ class _$_Loading extends _Loading {
 abstract class _Loading extends LoginState {
   const factory _Loading() = _$_Loading;
   const _Loading._() : super._();
+}
+
+/// @nodoc
+abstract class _$RegistroCopyWith<$Res> {
+  factory _$RegistroCopyWith(_Registro value, $Res Function(_Registro) then) =
+      __$RegistroCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$RegistroCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$RegistroCopyWith<$Res> {
+  __$RegistroCopyWithImpl(_Registro _value, $Res Function(_Registro) _then)
+      : super(_value, (v) => _then(v as _Registro));
+
+  @override
+  _Registro get _value => super._value as _Registro;
+}
+
+/// @nodoc
+
+class _$_Registro extends _Registro {
+  const _$_Registro() : super._();
+
+  @override
+  String toString() {
+    return 'LoginState.registro()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Registro);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() showing,
+    required TResult Function() loading,
+    required TResult Function() registro,
+  }) {
+    return registro();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? showing,
+    TResult Function()? loading,
+    TResult Function()? registro,
+  }) {
+    return registro?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? showing,
+    TResult Function()? loading,
+    TResult Function()? registro,
+    required TResult orElse(),
+  }) {
+    if (registro != null) {
+      return registro();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Showing value) showing,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Registro value) registro,
+  }) {
+    return registro(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Showing value)? showing,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
+  }) {
+    return registro?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Showing value)? showing,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Registro value)? registro,
+    required TResult orElse(),
+  }) {
+    if (registro != null) {
+      return registro(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Registro extends LoginState {
+  const factory _Registro() = _$_Registro;
+  const _Registro._() : super._();
 }

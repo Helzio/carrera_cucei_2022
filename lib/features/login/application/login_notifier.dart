@@ -8,6 +8,7 @@ class LoginState with _$LoginState {
   const factory LoginState.initial() = _Initial;
   const factory LoginState.showing() = _Showing;
   const factory LoginState.loading() = _Loading;
+  const factory LoginState.registro() = _Registro;
 }
 
 class LoginNotifier extends StateNotifier<LoginState> {
@@ -16,4 +17,5 @@ class LoginNotifier extends StateNotifier<LoginState> {
   void setShowing() => state = const LoginState.showing();
   void setInitial() => state = const LoginState.initial();
   void setLoading() => state = const LoginState.loading();
+  void setRegistro() => state = const LoginState.registro();
 }

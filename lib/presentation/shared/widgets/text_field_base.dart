@@ -1,5 +1,5 @@
+import 'package:carrera_cucei_2022/presentation/shared/widgets/text_fiels_input_decoration.dart';
 import 'package:flutter/material.dart';
-import 'package:tarea/presentation/shared/widgets/text_fiels_input_decoration.dart';
 
 class TextFieldBase extends StatelessWidget {
   final String label;
@@ -36,38 +36,32 @@ class TextFieldBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 16,
-        right: 24,
+    return TextFormField(
+      controller: controller,
+      initialValue: controller == null ? initialValue : null,
+      keyboardType: textInputType,
+      maxLength: maxLength,
+      textInputAction: textInputAction,
+      validator: validation,
+      textCapitalization: textCapitalization ?? TextCapitalization.none,
+      onChanged: onChanged,
+      decoration: detalle
+          ? textFieldInputDecorationDetalle(
+              label: label,
+              hint: hint,
+              icon: icon,
+            )
+          : textFieldInputDecoration(
+              label: label,
+              hint: hint,
+              icon: icon,
+            ),
+      style: const TextStyle(
+        fontSize: 14,
+        height: 1,
       ),
-      child: TextFormField(
-        controller: controller,
-        initialValue: controller == null ? initialValue : null,
-        keyboardType: textInputType,
-        maxLength: maxLength,
-        textInputAction: textInputAction,
-        validator: validation,
-        textCapitalization: textCapitalization ?? TextCapitalization.none,
-        onChanged: onChanged,
-        decoration: detalle
-            ? textFieldInputDecorationDetalle(
-                label: label,
-                hint: hint,
-                icon: icon,
-              )
-            : textFieldInputDecoration(
-                label: label,
-                hint: hint,
-                icon: icon,
-              ),
-        style: const TextStyle(
-          fontSize: 14,
-          height: 1,
-        ),
-        obscureText: oscureText,
-        focusNode: focusNode,
-      ),
+      obscureText: oscureText,
+      focusNode: focusNode,
     );
   }
 }

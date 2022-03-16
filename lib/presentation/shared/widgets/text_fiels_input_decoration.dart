@@ -7,27 +7,29 @@ InputDecoration textFieldInputDecoration({
 }) {
   return InputDecoration(
     isDense: true,
-    icon: icon,
+    filled: true,
     floatingLabelBehavior: FloatingLabelBehavior.always,
+    suffixIcon: icon,
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.white.withOpacity(.5),
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.white.withOpacity(.5),
+      ),
+    ),
+    border: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.white.withOpacity(.5),
+      ),
+    ),
     labelText: label,
-    labelStyle: const TextStyle(
-      color: Color(0xFF363062),
-    ),
     counterText: "",
-    enabledBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(
-        color: Color(0xFF363062),
-      ),
-    ),
-    focusedBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(
-        color: Color(0xFF363062),
-      ),
-    ),
-    hintText: hint,
-    hintStyle: const TextStyle(
-      fontSize: 14,
-      color: Colors.black,
+    labelStyle: const TextStyle(
+      color: Colors.white,
+      fontSize: 16,
     ),
   );
 }
@@ -46,12 +48,12 @@ InputDecoration textFieldInputDecorationDetalle({
       color: Color(0xFF363062),
     ),
     counterText: "",
-    enabledBorder: const UnderlineInputBorder(
+    enabledBorder: const OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.transparent,
       ),
     ),
-    focusedBorder: const UnderlineInputBorder(
+    focusedBorder: const OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.transparent,
       ),

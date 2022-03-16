@@ -1,6 +1,8 @@
+import 'package:carrera_cucei_2022/features/login/providers/login_providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class EmailTextInput extends StatelessWidget {
+class EmailTextInput extends ConsumerWidget {
   const EmailTextInput({
     Key? key,
   }) : super(key: key);
@@ -8,12 +10,22 @@ class EmailTextInput extends StatelessWidget {
   @override
   Widget build(
     BuildContext context,
+    WidgetRef ref,
   ) {
     return TextFormField(
       cursorColor: Colors.white,
       textInputAction: TextInputAction.next,
-      keyboardType: TextInputType.emailAddress,
-      onChanged: (String email) {},
+      keyboardType: TextInputType.number,
+      onChanged: (String email) {
+        ref.read(apiloginProvider.notifier).changeEmail(email);
+      },
+      validator: (string) {
+        if (string == null || string.isEmpty) {
+          return "* El código es requerido";
+        } else {
+          return null;
+        }
+      },
       decoration: const InputDecoration(
         isDense: true,
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -32,7 +44,7 @@ class EmailTextInput extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        labelText: "Email:",
+        labelText: "Código:",
         counterText: "",
         labelStyle: TextStyle(
           color: Colors.white,
