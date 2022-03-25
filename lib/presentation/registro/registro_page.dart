@@ -123,6 +123,7 @@ class _RegistroPageState extends ConsumerState<RegistroPage> {
     return WillPopScope(
       onWillPop: () {
         ref.read(loginProvider.notifier).setShowing();
+        FocusScope.of(context).unfocus();
         return Future.value(true);
       },
       child: AnimatedOpacity(

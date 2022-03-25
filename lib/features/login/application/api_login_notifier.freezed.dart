@@ -22,7 +22,7 @@ class _$ApiLoginStateTearOff {
       {required String email,
       required String password,
       required bool loading,
-      required Option<Either<LoginFailure, Unit>> option}) {
+      required Option<Either<LoginFailure, Corredor>> option}) {
     return _ApiLoginState(
       email: email,
       password: password,
@@ -40,7 +40,7 @@ mixin _$ApiLoginState {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
-  Option<Either<LoginFailure, Unit>> get option =>
+  Option<Either<LoginFailure, Corredor>> get option =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -57,7 +57,7 @@ abstract class $ApiLoginStateCopyWith<$Res> {
       {String email,
       String password,
       bool loading,
-      Option<Either<LoginFailure, Unit>> option});
+      Option<Either<LoginFailure, Corredor>> option});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class _$ApiLoginStateCopyWithImpl<$Res>
       option: option == freezed
           ? _value.option
           : option // ignore: cast_nullable_to_non_nullable
-              as Option<Either<LoginFailure, Unit>>,
+              as Option<Either<LoginFailure, Corredor>>,
     ));
   }
 }
@@ -108,7 +108,7 @@ abstract class _$ApiLoginStateCopyWith<$Res>
       {String email,
       String password,
       bool loading,
-      Option<Either<LoginFailure, Unit>> option});
+      Option<Either<LoginFailure, Corredor>> option});
 }
 
 /// @nodoc
@@ -145,7 +145,7 @@ class __$ApiLoginStateCopyWithImpl<$Res>
       option: option == freezed
           ? _value.option
           : option // ignore: cast_nullable_to_non_nullable
-              as Option<Either<LoginFailure, Unit>>,
+              as Option<Either<LoginFailure, Corredor>>,
     ));
   }
 }
@@ -167,7 +167,7 @@ class _$_ApiLoginState extends _ApiLoginState {
   @override
   final bool loading;
   @override
-  final Option<Either<LoginFailure, Unit>> option;
+  final Option<Either<LoginFailure, Corredor>> option;
 
   @override
   String toString() {
@@ -201,10 +201,11 @@ class _$_ApiLoginState extends _ApiLoginState {
 
 abstract class _ApiLoginState extends ApiLoginState {
   const factory _ApiLoginState(
-      {required String email,
-      required String password,
-      required bool loading,
-      required Option<Either<LoginFailure, Unit>> option}) = _$_ApiLoginState;
+          {required String email,
+          required String password,
+          required bool loading,
+          required Option<Either<LoginFailure, Corredor>> option}) =
+      _$_ApiLoginState;
   const _ApiLoginState._() : super._();
 
   @override
@@ -214,7 +215,7 @@ abstract class _ApiLoginState extends ApiLoginState {
   @override
   bool get loading;
   @override
-  Option<Either<LoginFailure, Unit>> get option;
+  Option<Either<LoginFailure, Corredor>> get option;
   @override
   @JsonKey(ignore: true)
   _$ApiLoginStateCopyWith<_ApiLoginState> get copyWith =>

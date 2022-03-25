@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:carrera_cucei_2022/features/acore/dio/domain/exceptions/exceptions.dart';
 import 'package:carrera_cucei_2022/features/acore/dio/infrastructure/extensions/extension.dart';
-import 'package:dartz/dartz.dart';
+import 'package:carrera_cucei_2022/features/login/infrastructure/dtos/corredor_dto.dart';
 import 'package:dio/dio.dart';
 
 class LoginRemoteService {
@@ -8,7 +10,7 @@ class LoginRemoteService {
 
   LoginRemoteService(this._dio);
 
-  Future<Unit> login({
+  Future<CorredorDto> login({
     required String email,
     required String password,
   }) async {
@@ -34,10 +36,12 @@ class LoginRemoteService {
 
     if (response.statusCode == 200) {
       final data = response.data;
-      if (data == "200") {
-        return unit;
-      } else {
+      if (data == "400") {
         throw DatosInvalidosException();
+      } else {
+        return CorredorDto.fromJson(
+          jsonDecode(data.toString()) as Map<String, dynamic>,
+        );
       }
     } else if (response.statusCode == 400) {
       throw DatosInvalidosException();

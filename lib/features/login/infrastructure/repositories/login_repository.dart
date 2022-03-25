@@ -14,13 +14,15 @@ class LoginRepository {
     this._local,
   );
 
-  Future<Either<LoginFailure, Unit>> login({
+  Future<Either<LoginFailure, Corredor>> login({
     required String email,
     required String password,
   }) async {
     try {
-      await _remote.login(email: email, password: password);
-      return right(unit);
+      final dto = await _remote.login(email: email, password: password);
+      final corredor = dto.toDomain();
+      await _local.save(corredor);
+      return right(corredor);
     } on InternetException {
       return const Left(
         LoginFailure.internet(),

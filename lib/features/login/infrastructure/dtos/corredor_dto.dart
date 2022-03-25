@@ -3,18 +3,25 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'corredor_dto.freezed.dart';
 part 'corredor_dto.g.dart';
 
+int idFromJson(Object object) {
+  if (object is int) {
+    return object;
+  }
+  return int.tryParse(object as String) ?? -1;
+}
+
 @freezed
 class CorredorDto with _$CorredorDto {
   const CorredorDto._();
   const factory CorredorDto({
-    required int id,
-    required String nombre,
-    required String codigo,
-    required String email,
-    required String phone,
-    required String escuela,
-    required String semestre,
-    required String password,
+    @JsonKey(fromJson: idFromJson) required int id,
+    @JsonKey(name: "Nombre") required String nombre,
+    @JsonKey(name: "Codigo") required String codigo,
+    @JsonKey(name: "Correo") required String email,
+    @JsonKey(name: "Telefono") required String phone,
+    @JsonKey(name: "Escuela") required String escuela,
+    @JsonKey(name: "Semestre") required String semestre,
+    @JsonKey(name: "Password") required String password,
   }) = _CorredorDto;
 
   factory CorredorDto.fromDomain(Corredor corredor) => CorredorDto(

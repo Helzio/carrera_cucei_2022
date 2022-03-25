@@ -8,24 +8,24 @@ part of 'corredor_dto.dart';
 
 _$_CorredorDto _$$_CorredorDtoFromJson(Map<String, dynamic> json) =>
     _$_CorredorDto(
-      id: json['id'] as int,
-      nombre: json['nombre'] as String,
-      codigo: json['codigo'] as String,
-      email: json['email'] as String,
-      phone: json['phone'] as String,
-      escuela: json['escuela'] as String,
-      semestre: json['semestre'] as String,
-      password: json['password'] as String,
+      id: idFromJson(json['id'] as Object),
+      nombre: json['Nombre'] as String,
+      codigo: json['Codigo'] as String,
+      email: json['Correo'] as String,
+      phone: json['Telefono'] as String,
+      escuela: json['Escuela'] as String,
+      semestre: json['Semestre'] as String,
+      password: json['Password'] as String,
     );
 
 Map<String, dynamic> _$$_CorredorDtoToJson(_$_CorredorDto instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'nombre': instance.nombre,
-      'codigo': instance.codigo,
-      'email': instance.email,
-      'phone': instance.phone,
-      'escuela': instance.escuela,
-      'semestre': instance.semestre,
-      'password': instance.password,
+      'Nombre': instance.nombre,
+      'Codigo': instance.codigo,
+      'Correo': instance.email,
+      'Telefono': instance.phone,
+      'Escuela': instance.escuela,
+      'Semestre': instance.semestre,
+      'Password': instance.password,
     };

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:carrera_cucei_2022/presentation/home/home_page.dart';
 import 'package:carrera_cucei_2022/presentation/login_page/login_page.dart';
 import 'package:carrera_cucei_2022/presentation/registro/registro_page.dart';
+import 'package:carrera_cucei_2022/presentation/splash/splash_page.dart';
 
 @CustomAutoRouter(
   routes: <CustomRoute>[
@@ -10,6 +11,12 @@ import 'package:carrera_cucei_2022/presentation/registro/registro_page.dart';
       initial: true,
       transitionsBuilder: TransitionsBuilders.fadeIn,
       path: "/login",
+    ),
+    CustomRoute(
+      page: SplashPage,
+      initial: true,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      path: "/",
     ),
     CustomRoute(
       page: RegistroPage,

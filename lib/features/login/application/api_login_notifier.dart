@@ -1,3 +1,4 @@
+import 'package:carrera_cucei_2022/features/login/domain/entities/corredor.dart';
 import 'package:carrera_cucei_2022/features/login/domain/failures/login_failure.dart';
 import 'package:carrera_cucei_2022/features/login/infrastructure/repositories/login_repository.dart';
 import 'package:dartz/dartz.dart';
@@ -13,7 +14,7 @@ class ApiLoginState with _$ApiLoginState {
     required String email,
     required String password,
     required bool loading,
-    required Option<Either<LoginFailure, Unit>> option,
+    required Option<Either<LoginFailure, Corredor>> option,
   }) = _ApiLoginState;
 
   factory ApiLoginState.initial() => const ApiLoginState(
@@ -36,9 +37,9 @@ class ApiLoginStateNotifier extends StateNotifier<ApiLoginState> {
     state = state.copyWith(password: password, option: none());
   }
 
-  void cerrarSesion() {
+  Future<void> cerrarSesion() async {
     state = ApiLoginState.initial();
-    _repository.cerrarSesion();
+    await _repository.cerrarSesion();
   }
 
   Future<void> login() async {

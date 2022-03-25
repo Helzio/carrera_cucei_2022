@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:carrera_cucei_2022/features/corredor/providers/corredor_provider.dart';
 import 'package:carrera_cucei_2022/features/login/application/api_login_notifier.dart';
 import 'package:carrera_cucei_2022/features/login/providers/login_providers.dart';
 import 'package:carrera_cucei_2022/features/registro/application/registro_notifier.dart';
@@ -21,7 +22,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 1500))
+    Future.delayed(const Duration(milliseconds: 500))
         .then((value) => ref.read(loginProvider.notifier).setShowing());
   }
 
@@ -32,12 +33,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     ref.listen<RegistroState>(registroProvider, (previous, next) {
       next.option.fold(
         () => null,
-        (some) => some.fold(
-          (failure) => null,
-          (succes) {
-            FocusScope.of(context).requestFocus(FocusNode());
-          },
-        ),
+        (some) => FocusScope.of(context).unfocus(),
       );
     });
 
@@ -101,7 +97,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 },
               );
             },
-            (unit) {
+            (corredor) async {
+              ref.read(loginProvider.notifier).setInitial();
+              await Future.delayed(const Duration(milliseconds: 500));
+              ref.read(corredorProvider.notifier).setCorredor(corredor);
               AutoRouter.of(context).push(const HomeRoute());
             },
           );

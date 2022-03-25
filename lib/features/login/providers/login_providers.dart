@@ -1,6 +1,7 @@
 import 'package:carrera_cucei_2022/features/acore/database/providers/providers.dart';
 import 'package:carrera_cucei_2022/features/acore/dio/providers/providers.dart';
 import 'package:carrera_cucei_2022/features/login/application/api_login_notifier.dart';
+import 'package:carrera_cucei_2022/features/login/application/auth_notifier.dart';
 import 'package:carrera_cucei_2022/features/login/application/login_notifier.dart';
 import 'package:carrera_cucei_2022/features/login/infrastructure/local/login_local_service.dart';
 import 'package:carrera_cucei_2022/features/login/infrastructure/remote/login_remote_service.dart';
@@ -29,4 +30,9 @@ final loginRepositoryProvider = Provider<LoginRepository>((ref) {
 final apiloginProvider =
     StateNotifierProvider<ApiLoginStateNotifier, ApiLoginState>((ref) {
   return ApiLoginStateNotifier(ref.watch(loginRepositoryProvider));
+});
+
+final authNotifierProvider =
+    StateNotifierProvider<AuthNotifier, AuthState>((ref) {
+  return AuthNotifier(ref.watch(loginRepositoryProvider));
 });

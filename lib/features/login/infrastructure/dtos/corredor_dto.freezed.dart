@@ -23,14 +23,14 @@ class _$CorredorDtoTearOff {
   const _$CorredorDtoTearOff();
 
   _CorredorDto call(
-      {required int id,
-      required String nombre,
-      required String codigo,
-      required String email,
-      required String phone,
-      required String escuela,
-      required String semestre,
-      required String password}) {
+      {@JsonKey(fromJson: idFromJson) required int id,
+      @JsonKey(name: "Nombre") required String nombre,
+      @JsonKey(name: "Codigo") required String codigo,
+      @JsonKey(name: "Correo") required String email,
+      @JsonKey(name: "Telefono") required String phone,
+      @JsonKey(name: "Escuela") required String escuela,
+      @JsonKey(name: "Semestre") required String semestre,
+      @JsonKey(name: "Password") required String password}) {
     return _CorredorDto(
       id: id,
       nombre: nombre,
@@ -53,13 +53,21 @@ const $CorredorDto = _$CorredorDtoTearOff();
 
 /// @nodoc
 mixin _$CorredorDto {
+  @JsonKey(fromJson: idFromJson)
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "Nombre")
   String get nombre => throw _privateConstructorUsedError;
+  @JsonKey(name: "Codigo")
   String get codigo => throw _privateConstructorUsedError;
+  @JsonKey(name: "Correo")
   String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: "Telefono")
   String get phone => throw _privateConstructorUsedError;
+  @JsonKey(name: "Escuela")
   String get escuela => throw _privateConstructorUsedError;
+  @JsonKey(name: "Semestre")
   String get semestre => throw _privateConstructorUsedError;
+  @JsonKey(name: "Password")
   String get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -74,14 +82,14 @@ abstract class $CorredorDtoCopyWith<$Res> {
           CorredorDto value, $Res Function(CorredorDto) then) =
       _$CorredorDtoCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String nombre,
-      String codigo,
-      String email,
-      String phone,
-      String escuela,
-      String semestre,
-      String password});
+      {@JsonKey(fromJson: idFromJson) int id,
+      @JsonKey(name: "Nombre") String nombre,
+      @JsonKey(name: "Codigo") String codigo,
+      @JsonKey(name: "Correo") String email,
+      @JsonKey(name: "Telefono") String phone,
+      @JsonKey(name: "Escuela") String escuela,
+      @JsonKey(name: "Semestre") String semestre,
+      @JsonKey(name: "Password") String password});
 }
 
 /// @nodoc
@@ -148,14 +156,14 @@ abstract class _$CorredorDtoCopyWith<$Res>
       __$CorredorDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String nombre,
-      String codigo,
-      String email,
-      String phone,
-      String escuela,
-      String semestre,
-      String password});
+      {@JsonKey(fromJson: idFromJson) int id,
+      @JsonKey(name: "Nombre") String nombre,
+      @JsonKey(name: "Codigo") String codigo,
+      @JsonKey(name: "Correo") String email,
+      @JsonKey(name: "Telefono") String phone,
+      @JsonKey(name: "Escuela") String escuela,
+      @JsonKey(name: "Semestre") String semestre,
+      @JsonKey(name: "Password") String password});
 }
 
 /// @nodoc
@@ -220,34 +228,42 @@ class __$CorredorDtoCopyWithImpl<$Res> extends _$CorredorDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CorredorDto extends _CorredorDto {
   const _$_CorredorDto(
-      {required this.id,
-      required this.nombre,
-      required this.codigo,
-      required this.email,
-      required this.phone,
-      required this.escuela,
-      required this.semestre,
-      required this.password})
+      {@JsonKey(fromJson: idFromJson) required this.id,
+      @JsonKey(name: "Nombre") required this.nombre,
+      @JsonKey(name: "Codigo") required this.codigo,
+      @JsonKey(name: "Correo") required this.email,
+      @JsonKey(name: "Telefono") required this.phone,
+      @JsonKey(name: "Escuela") required this.escuela,
+      @JsonKey(name: "Semestre") required this.semestre,
+      @JsonKey(name: "Password") required this.password})
       : super._();
 
   factory _$_CorredorDto.fromJson(Map<String, dynamic> json) =>
       _$$_CorredorDtoFromJson(json);
 
   @override
+  @JsonKey(fromJson: idFromJson)
   final int id;
   @override
+  @JsonKey(name: "Nombre")
   final String nombre;
   @override
+  @JsonKey(name: "Codigo")
   final String codigo;
   @override
+  @JsonKey(name: "Correo")
   final String email;
   @override
+  @JsonKey(name: "Telefono")
   final String phone;
   @override
+  @JsonKey(name: "Escuela")
   final String escuela;
   @override
+  @JsonKey(name: "Semestre")
   final String semestre;
   @override
+  @JsonKey(name: "Password")
   final String password;
 
   @override
@@ -295,34 +311,42 @@ class _$_CorredorDto extends _CorredorDto {
 
 abstract class _CorredorDto extends CorredorDto {
   const factory _CorredorDto(
-      {required int id,
-      required String nombre,
-      required String codigo,
-      required String email,
-      required String phone,
-      required String escuela,
-      required String semestre,
-      required String password}) = _$_CorredorDto;
+      {@JsonKey(fromJson: idFromJson) required int id,
+      @JsonKey(name: "Nombre") required String nombre,
+      @JsonKey(name: "Codigo") required String codigo,
+      @JsonKey(name: "Correo") required String email,
+      @JsonKey(name: "Telefono") required String phone,
+      @JsonKey(name: "Escuela") required String escuela,
+      @JsonKey(name: "Semestre") required String semestre,
+      @JsonKey(name: "Password") required String password}) = _$_CorredorDto;
   const _CorredorDto._() : super._();
 
   factory _CorredorDto.fromJson(Map<String, dynamic> json) =
       _$_CorredorDto.fromJson;
 
   @override
+  @JsonKey(fromJson: idFromJson)
   int get id;
   @override
+  @JsonKey(name: "Nombre")
   String get nombre;
   @override
+  @JsonKey(name: "Codigo")
   String get codigo;
   @override
+  @JsonKey(name: "Correo")
   String get email;
   @override
+  @JsonKey(name: "Telefono")
   String get phone;
   @override
+  @JsonKey(name: "Escuela")
   String get escuela;
   @override
+  @JsonKey(name: "Semestre")
   String get semestre;
   @override
+  @JsonKey(name: "Password")
   String get password;
   @override
   @JsonKey(ignore: true)
