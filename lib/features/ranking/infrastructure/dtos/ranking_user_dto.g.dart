@@ -11,6 +11,7 @@ _$_RankingUserDto _$$_RankingUserDtoFromJson(Map<String, dynamic> json) =>
       nombre: json['Nombre'] as String,
       distancia: json['Distancia'] as String,
       foto: json['Foto'] as String,
+      rank: json['rank'] as String? ?? '0',
     );
 
 Map<String, dynamic> _$$_RankingUserDtoToJson(_$_RankingUserDto instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_RankingUserDtoToJson(_$_RankingUserDto instance) =>
       'Nombre': instance.nombre,
       'Distancia': instance.distancia,
       'Foto': instance.foto,
+      'rank': instance.rank,
     };

@@ -21,11 +21,13 @@ class _$RankingUserTearOff {
   _RankingUser call(
       {required String nombre,
       required String foto,
-      required String distancia}) {
+      required String distancia,
+      required String rank}) {
     return _RankingUser(
       nombre: nombre,
       foto: foto,
       distancia: distancia,
+      rank: rank,
     );
   }
 }
@@ -38,6 +40,7 @@ mixin _$RankingUser {
   String get nombre => throw _privateConstructorUsedError;
   String get foto => throw _privateConstructorUsedError;
   String get distancia => throw _privateConstructorUsedError;
+  String get rank => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RankingUserCopyWith<RankingUser> get copyWith =>
@@ -49,7 +52,7 @@ abstract class $RankingUserCopyWith<$Res> {
   factory $RankingUserCopyWith(
           RankingUser value, $Res Function(RankingUser) then) =
       _$RankingUserCopyWithImpl<$Res>;
-  $Res call({String nombre, String foto, String distancia});
+  $Res call({String nombre, String foto, String distancia, String rank});
 }
 
 /// @nodoc
@@ -65,6 +68,7 @@ class _$RankingUserCopyWithImpl<$Res> implements $RankingUserCopyWith<$Res> {
     Object? nombre = freezed,
     Object? foto = freezed,
     Object? distancia = freezed,
+    Object? rank = freezed,
   }) {
     return _then(_value.copyWith(
       nombre: nombre == freezed
@@ -79,6 +83,10 @@ class _$RankingUserCopyWithImpl<$Res> implements $RankingUserCopyWith<$Res> {
           ? _value.distancia
           : distancia // ignore: cast_nullable_to_non_nullable
               as String,
+      rank: rank == freezed
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -90,7 +98,7 @@ abstract class _$RankingUserCopyWith<$Res>
           _RankingUser value, $Res Function(_RankingUser) then) =
       __$RankingUserCopyWithImpl<$Res>;
   @override
-  $Res call({String nombre, String foto, String distancia});
+  $Res call({String nombre, String foto, String distancia, String rank});
 }
 
 /// @nodoc
@@ -108,6 +116,7 @@ class __$RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
     Object? nombre = freezed,
     Object? foto = freezed,
     Object? distancia = freezed,
+    Object? rank = freezed,
   }) {
     return _then(_RankingUser(
       nombre: nombre == freezed
@@ -122,6 +131,10 @@ class __$RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
           ? _value.distancia
           : distancia // ignore: cast_nullable_to_non_nullable
               as String,
+      rank: rank == freezed
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -130,7 +143,10 @@ class __$RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
 
 class _$_RankingUser extends _RankingUser {
   const _$_RankingUser(
-      {required this.nombre, required this.foto, required this.distancia})
+      {required this.nombre,
+      required this.foto,
+      required this.distancia,
+      required this.rank})
       : super._();
 
   @override
@@ -139,10 +155,12 @@ class _$_RankingUser extends _RankingUser {
   final String foto;
   @override
   final String distancia;
+  @override
+  final String rank;
 
   @override
   String toString() {
-    return 'RankingUser(nombre: $nombre, foto: $foto, distancia: $distancia)';
+    return 'RankingUser(nombre: $nombre, foto: $foto, distancia: $distancia, rank: $rank)';
   }
 
   @override
@@ -152,7 +170,8 @@ class _$_RankingUser extends _RankingUser {
             other is _RankingUser &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.foto, foto) &&
-            const DeepCollectionEquality().equals(other.distancia, distancia));
+            const DeepCollectionEquality().equals(other.distancia, distancia) &&
+            const DeepCollectionEquality().equals(other.rank, rank));
   }
 
   @override
@@ -160,7 +179,8 @@ class _$_RankingUser extends _RankingUser {
       runtimeType,
       const DeepCollectionEquality().hash(nombre),
       const DeepCollectionEquality().hash(foto),
-      const DeepCollectionEquality().hash(distancia));
+      const DeepCollectionEquality().hash(distancia),
+      const DeepCollectionEquality().hash(rank));
 
   @JsonKey(ignore: true)
   @override
@@ -172,7 +192,8 @@ abstract class _RankingUser extends RankingUser {
   const factory _RankingUser(
       {required String nombre,
       required String foto,
-      required String distancia}) = _$_RankingUser;
+      required String distancia,
+      required String rank}) = _$_RankingUser;
   const _RankingUser._() : super._();
 
   @override
@@ -181,6 +202,8 @@ abstract class _RankingUser extends RankingUser {
   String get foto;
   @override
   String get distancia;
+  @override
+  String get rank;
   @override
   @JsonKey(ignore: true)
   _$RankingUserCopyWith<_RankingUser> get copyWith =>

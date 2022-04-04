@@ -8,5 +8,6 @@ class RankingUser with _$RankingUser {
     required String nombre,
     required String foto,
     required String distancia,
+    required String rank,
   }) = _RankingUser;
 }

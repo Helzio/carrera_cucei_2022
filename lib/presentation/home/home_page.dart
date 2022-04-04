@@ -1,9 +1,12 @@
 import 'dart:math';
 
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carrera_cucei_2022/features/corredor/providers/corredor_provider.dart';
 import 'package:carrera_cucei_2022/features/login/providers/login_providers.dart';
+import 'package:carrera_cucei_2022/features/ranking/providers/ranking_providers.dart';
+import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/presentation/home/drawer/app_drawer.dart';
+import 'package:carrera_cucei_2022/presentation/home/ranking/ranking_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -55,12 +58,28 @@ final mockDistance = [
   "3.03 km",
 ];
 
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    mockCorredores.shuffle();
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ConsumerState<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      ref.read(rankingProvider.notifier).getRanking();
+      return ref
+          .read(rankingmeProvider.notifier)
+          .getRanking(codigo: ref.read(corredorProvider).corredor.codigo);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    //mockCorredores.shuffle();
     return WillPopScope(
       onWillPop: () {
         ref.read(loginProvider.notifier).setShowing();
@@ -103,359 +122,7 @@ class HomePage extends ConsumerWidget {
                 ),
               ),
             ),
-            body: Column(
-              children: [
-                const SizedBox(
-                  height: 16,
-                ),
-                Expanded(
-                  flex: 48,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          right: 240,
-                          top: 72,
-                        ),
-                        child: Column(
-                          children: [
-                            const Text(
-                              "2",
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const Icon(
-                              Icons.arrow_drop_up,
-                              color: colorPrimary,
-                              size: 40,
-                            ),
-                            Stack(
-                              alignment: Alignment.center,
-                              children: const [
-                                CircleAvatar(
-                                  radius: 63,
-                                  backgroundColor: colorPrimary,
-                                ),
-                                CircleAvatar(
-                                  radius: 60,
-                                  backgroundImage: CachedNetworkImageProvider(
-                                    "https://scontent.fgdl1-3.fna.fbcdn.net/v/t1.18169-9/379401_1679270277172_722915003_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=174925&_nc_eui2=AeFGz7jCE3qBqWBYh94oil2Py6cq4mhI8IPLpyriaEjwgzM6orC0fiNbue8LKyBWEds&_nc_ohc=YU-D7hdLhigAX-PieOU&_nc_pt=1&_nc_ht=scontent.fgdl1-3.fna&oh=00_AT9z4CkFvpRlx5IRJnbvPl76rpzS1s0KjgsODm-cF_hLIg&oe=62645A72",
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            const Text(
-                              "Oscar Méndez",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "6.69 km",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: colorPrimary.withOpacity(.8),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 240,
-                          top: 72,
-                        ),
-                        child: Column(
-                          children: [
-                            const Text(
-                              "3",
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const Icon(
-                              Icons.arrow_drop_down,
-                              size: 40,
-                            ),
-                            Stack(
-                              alignment: Alignment.center,
-                              children: const [
-                                CircleAvatar(
-                                  radius: 63,
-                                  backgroundColor: colorPrimary,
-                                ),
-                                CircleAvatar(
-                                  radius: 60,
-                                  backgroundImage: CachedNetworkImageProvider(
-                                    "https://scontent.fgdl1-3.fna.fbcdn.net/v/t1.6435-9/181425576_5674771645896651_3171021935559246539_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=174925&_nc_eui2=AeGX200eXMRTlARkP1J-KFr2-tP7Qcljo5b60_tByWOjlnRrae6aehL2HzGO43zsoe8&_nc_ohc=iC9yzZ4ld8YAX8G8MMS&_nc_pt=1&_nc_ht=scontent.fgdl1-3.fna&oh=00_AT8gi3cF6e2L80ROz67EbQ00Y8FA5XfVPoN0VrCql_DzWA&oe=6263BB39",
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            const Text(
-                              "Karlo Nall",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "6.58 km",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: colorPrimary.withOpacity(.8),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          const Text(
-                            "1",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Image.asset(
-                            "assets/images/crown.png",
-                            width: 48,
-                            height: 48,
-                          ),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Stack(
-                            alignment: Alignment.center,
-                            children: const [
-                              CircleAvatar(
-                                radius: 84,
-                                backgroundColor: colorPrimary,
-                              ),
-                              CircleAvatar(
-                                radius: 80,
-                                backgroundImage: CachedNetworkImageProvider(
-                                  "https://scontent.fgdl1-3.fna.fbcdn.net/v/t1.6435-9/106293531_3125902300831522_3198701139646932254_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=174925&_nc_eui2=AeHEapvgbVisXD62cRjo5-0nujlNmiQani26OU2aJBqeLS387vBNrXYwNEU16Ycv9qo&_nc_ohc=qwDdAL3be9kAX_G0pCj&_nc_pt=1&_nc_ht=scontent.fgdl1-3.fna&oh=00_AT9Cc7_EZtVXyfuo2pOLF4sSq8w0yzZ7gEAe0Xx54ynV2Q&oe=6262BB7A",
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            "Miguel Aferez",
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            "7.35 km",
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: colorPrimary.withOpacity(.8),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Expanded(
-                  flex: 52,
-                  child: ListView.builder(
-                    itemCount: 7,
-                    physics: const BouncingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 24,
-                          vertical: 8,
-                        ),
-                        child: Row(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "${index + 4}",
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                getRandomIcon(),
-                              ],
-                            ),
-                            const SizedBox(
-                              width: 16,
-                            ),
-                            Expanded(
-                              child: Container(
-                                height: 56,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(28),
-                                  color: Colors.white.withOpacity(.3),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        const CircleAvatar(
-                                          radius: 28,
-                                          backgroundColor: colorPrimary,
-                                        ),
-                                        CircleAvatar(
-                                          radius: 26,
-                                          backgroundImage:
-                                              CachedNetworkImageProvider(
-                                            mockCorredores[index].imagen,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      width: 16,
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        mockCorredores[index].nombre,
-                                        style: const TextStyle(
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      mockDistance[index],
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: colorPrimary.withOpacity(.8),
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 16,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Container(
-                  color: Colors.black.withOpacity(.7),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 8,
-                    ),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: const [
-                            Text(
-                              "2",
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Icon(
-                              Icons.arrow_drop_up,
-                              color: colorPrimary,
-                              size: 30,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        Expanded(
-                          child: Container(
-                            height: 56,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(28),
-                              color: Colors.white.withOpacity(.3),
-                            ),
-                            child: Row(
-                              children: [
-                                Stack(
-                                  alignment: Alignment.center,
-                                  children: const [
-                                    CircleAvatar(
-                                      radius: 28,
-                                      backgroundColor: colorPrimary,
-                                    ),
-                                    CircleAvatar(
-                                      radius: 26,
-                                      backgroundImage:
-                                          CachedNetworkImageProvider(
-                                        "https://scontent.fgdl1-3.fna.fbcdn.net/v/t1.18169-9/379401_1679270277172_722915003_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=174925&_nc_eui2=AeFGz7jCE3qBqWBYh94oil2Py6cq4mhI8IPLpyriaEjwgzM6orC0fiNbue8LKyBWEds&_nc_ohc=YU-D7hdLhigAX-PieOU&_nc_pt=1&_nc_ht=scontent.fgdl1-3.fna&oh=00_AT9z4CkFvpRlx5IRJnbvPl76rpzS1s0KjgsODm-cF_hLIg&oe=62645A72",
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  width: 16,
-                                ),
-                                const Expanded(
-                                  child: Text(
-                                    "Oscar Méndez",
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "6.69 km",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: colorPrimary.withOpacity(.8),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 16,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            body: const RankingWidget(),
             drawer: const AppDrawer(),
           ),
         ],

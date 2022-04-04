@@ -25,11 +25,13 @@ class _$RankingUserDtoTearOff {
   _RankingUserDto call(
       {@JsonKey(name: 'Nombre') required String nombre,
       @JsonKey(name: 'Distancia') required String distancia,
-      @JsonKey(name: 'Foto') required String foto}) {
+      @JsonKey(name: 'Foto') required String foto,
+      @JsonKey(name: 'rank', defaultValue: "0") required String rank}) {
     return _RankingUserDto(
       nombre: nombre,
       distancia: distancia,
       foto: foto,
+      rank: rank,
     );
   }
 
@@ -49,6 +51,8 @@ mixin _$RankingUserDto {
   String get distancia => throw _privateConstructorUsedError;
   @JsonKey(name: 'Foto')
   String get foto => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rank', defaultValue: "0")
+  String get rank => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,7 +68,8 @@ abstract class $RankingUserDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'Nombre') String nombre,
       @JsonKey(name: 'Distancia') String distancia,
-      @JsonKey(name: 'Foto') String foto});
+      @JsonKey(name: 'Foto') String foto,
+      @JsonKey(name: 'rank', defaultValue: "0") String rank});
 }
 
 /// @nodoc
@@ -81,6 +86,7 @@ class _$RankingUserDtoCopyWithImpl<$Res>
     Object? nombre = freezed,
     Object? distancia = freezed,
     Object? foto = freezed,
+    Object? rank = freezed,
   }) {
     return _then(_value.copyWith(
       nombre: nombre == freezed
@@ -94,6 +100,10 @@ class _$RankingUserDtoCopyWithImpl<$Res>
       foto: foto == freezed
           ? _value.foto
           : foto // ignore: cast_nullable_to_non_nullable
+              as String,
+      rank: rank == freezed
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -109,7 +119,8 @@ abstract class _$RankingUserDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'Nombre') String nombre,
       @JsonKey(name: 'Distancia') String distancia,
-      @JsonKey(name: 'Foto') String foto});
+      @JsonKey(name: 'Foto') String foto,
+      @JsonKey(name: 'rank', defaultValue: "0") String rank});
 }
 
 /// @nodoc
@@ -128,6 +139,7 @@ class __$RankingUserDtoCopyWithImpl<$Res>
     Object? nombre = freezed,
     Object? distancia = freezed,
     Object? foto = freezed,
+    Object? rank = freezed,
   }) {
     return _then(_RankingUserDto(
       nombre: nombre == freezed
@@ -142,6 +154,10 @@ class __$RankingUserDtoCopyWithImpl<$Res>
           ? _value.foto
           : foto // ignore: cast_nullable_to_non_nullable
               as String,
+      rank: rank == freezed
+          ? _value.rank
+          : rank // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -152,7 +168,8 @@ class _$_RankingUserDto extends _RankingUserDto {
   const _$_RankingUserDto(
       {@JsonKey(name: 'Nombre') required this.nombre,
       @JsonKey(name: 'Distancia') required this.distancia,
-      @JsonKey(name: 'Foto') required this.foto})
+      @JsonKey(name: 'Foto') required this.foto,
+      @JsonKey(name: 'rank', defaultValue: "0") required this.rank})
       : super._();
 
   factory _$_RankingUserDto.fromJson(Map<String, dynamic> json) =>
@@ -167,10 +184,13 @@ class _$_RankingUserDto extends _RankingUserDto {
   @override
   @JsonKey(name: 'Foto')
   final String foto;
+  @override
+  @JsonKey(name: 'rank', defaultValue: "0")
+  final String rank;
 
   @override
   String toString() {
-    return 'RankingUserDto(nombre: $nombre, distancia: $distancia, foto: $foto)';
+    return 'RankingUserDto(nombre: $nombre, distancia: $distancia, foto: $foto, rank: $rank)';
   }
 
   @override
@@ -180,7 +200,8 @@ class _$_RankingUserDto extends _RankingUserDto {
             other is _RankingUserDto &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.distancia, distancia) &&
-            const DeepCollectionEquality().equals(other.foto, foto));
+            const DeepCollectionEquality().equals(other.foto, foto) &&
+            const DeepCollectionEquality().equals(other.rank, rank));
   }
 
   @override
@@ -188,7 +209,8 @@ class _$_RankingUserDto extends _RankingUserDto {
       runtimeType,
       const DeepCollectionEquality().hash(nombre),
       const DeepCollectionEquality().hash(distancia),
-      const DeepCollectionEquality().hash(foto));
+      const DeepCollectionEquality().hash(foto),
+      const DeepCollectionEquality().hash(rank));
 
   @JsonKey(ignore: true)
   @override
@@ -203,9 +225,11 @@ class _$_RankingUserDto extends _RankingUserDto {
 
 abstract class _RankingUserDto extends RankingUserDto {
   const factory _RankingUserDto(
-      {@JsonKey(name: 'Nombre') required String nombre,
-      @JsonKey(name: 'Distancia') required String distancia,
-      @JsonKey(name: 'Foto') required String foto}) = _$_RankingUserDto;
+          {@JsonKey(name: 'Nombre') required String nombre,
+          @JsonKey(name: 'Distancia') required String distancia,
+          @JsonKey(name: 'Foto') required String foto,
+          @JsonKey(name: 'rank', defaultValue: "0") required String rank}) =
+      _$_RankingUserDto;
   const _RankingUserDto._() : super._();
 
   factory _RankingUserDto.fromJson(Map<String, dynamic> json) =
@@ -220,6 +244,9 @@ abstract class _RankingUserDto extends RankingUserDto {
   @override
   @JsonKey(name: 'Foto')
   String get foto;
+  @override
+  @JsonKey(name: 'rank', defaultValue: "0")
+  String get rank;
   @override
   @JsonKey(ignore: true)
   _$RankingUserDtoCopyWith<_RankingUserDto> get copyWith =>

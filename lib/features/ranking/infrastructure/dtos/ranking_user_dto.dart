@@ -10,6 +10,7 @@ class RankingUserDto with _$RankingUserDto {
     @JsonKey(name: 'Nombre') required String nombre,
     @JsonKey(name: 'Distancia') required String distancia,
     @JsonKey(name: 'Foto') required String foto,
+    @JsonKey(name: 'rank', defaultValue: "0") required String rank,
   }) = _RankingUserDto;
 
   factory RankingUserDto.fromJson(Map<String, dynamic> json) =>
@@ -18,12 +19,12 @@ class RankingUserDto with _$RankingUserDto {
   factory RankingUserDto.fromDomain(RankingUser rankinguser) => RankingUserDto(
         nombre: rankinguser.nombre,
         distancia: rankinguser.distancia,
-        foto: rankinguser.foto,
+        foto: rankinguser.foto, rank: rankinguser.rank,
       );
 
   RankingUser toDomain() => RankingUser(
         nombre: nombre,
         distancia: distancia,
-        foto: foto,
+        foto: foto, rank: rank,
       );
 }
