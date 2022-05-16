@@ -303,7 +303,7 @@ class RankingmeWidget extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) {
-    final rankingmeState = ref.watch(rankingmeProvider);
+    //final rankingmeState = ref.watch(rankingmeProvider);
     return Container(
       color: Colors.black.withOpacity(.7),
       child: Padding(

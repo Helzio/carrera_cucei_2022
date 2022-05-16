@@ -12,21 +12,7 @@ part of 'corredor_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CorredorStateTearOff {
-  const _$CorredorStateTearOff();
-
-  _CorredorState call({required Corredor corredor}) {
-    return _CorredorState(
-      corredor: corredor,
-    );
-  }
-}
-
-/// @nodoc
-const $CorredorState = _$CorredorStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CorredorState {
@@ -77,11 +63,11 @@ class _$CorredorStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CorredorStateCopyWith<$Res>
+abstract class _$$_CorredorStateCopyWith<$Res>
     implements $CorredorStateCopyWith<$Res> {
-  factory _$CorredorStateCopyWith(
-          _CorredorState value, $Res Function(_CorredorState) then) =
-      __$CorredorStateCopyWithImpl<$Res>;
+  factory _$$_CorredorStateCopyWith(
+          _$_CorredorState value, $Res Function(_$_CorredorState) then) =
+      __$$_CorredorStateCopyWithImpl<$Res>;
   @override
   $Res call({Corredor corredor});
 
@@ -90,21 +76,21 @@ abstract class _$CorredorStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CorredorStateCopyWithImpl<$Res>
+class __$$_CorredorStateCopyWithImpl<$Res>
     extends _$CorredorStateCopyWithImpl<$Res>
-    implements _$CorredorStateCopyWith<$Res> {
-  __$CorredorStateCopyWithImpl(
-      _CorredorState _value, $Res Function(_CorredorState) _then)
-      : super(_value, (v) => _then(v as _CorredorState));
+    implements _$$_CorredorStateCopyWith<$Res> {
+  __$$_CorredorStateCopyWithImpl(
+      _$_CorredorState _value, $Res Function(_$_CorredorState) _then)
+      : super(_value, (v) => _then(v as _$_CorredorState));
 
   @override
-  _CorredorState get _value => super._value as _CorredorState;
+  _$_CorredorState get _value => super._value as _$_CorredorState;
 
   @override
   $Res call({
     Object? corredor = freezed,
   }) {
-    return _then(_CorredorState(
+    return _then(_$_CorredorState(
       corredor: corredor == freezed
           ? _value.corredor
           : corredor // ignore: cast_nullable_to_non_nullable
@@ -130,7 +116,7 @@ class _$_CorredorState extends _CorredorState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CorredorState &&
+            other is _$_CorredorState &&
             const DeepCollectionEquality().equals(other.corredor, corredor));
   }
 
@@ -140,18 +126,19 @@ class _$_CorredorState extends _CorredorState {
 
   @JsonKey(ignore: true)
   @override
-  _$CorredorStateCopyWith<_CorredorState> get copyWith =>
-      __$CorredorStateCopyWithImpl<_CorredorState>(this, _$identity);
+  _$$_CorredorStateCopyWith<_$_CorredorState> get copyWith =>
+      __$$_CorredorStateCopyWithImpl<_$_CorredorState>(this, _$identity);
 }
 
 abstract class _CorredorState extends CorredorState {
-  const factory _CorredorState({required Corredor corredor}) = _$_CorredorState;
+  const factory _CorredorState({required final Corredor corredor}) =
+      _$_CorredorState;
   const _CorredorState._() : super._();
 
   @override
-  Corredor get corredor;
+  Corredor get corredor => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CorredorStateCopyWith<_CorredorState> get copyWith =>
+  _$$_CorredorStateCopyWith<_$_CorredorState> get copyWith =>
       throw _privateConstructorUsedError;
 }

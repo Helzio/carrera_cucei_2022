@@ -12,28 +12,7 @@ part of 'ranking_user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RankingUserTearOff {
-  const _$RankingUserTearOff();
-
-  _RankingUser call(
-      {required String nombre,
-      required String foto,
-      required String distancia,
-      required String rank}) {
-    return _RankingUser(
-      nombre: nombre,
-      foto: foto,
-      distancia: distancia,
-      rank: rank,
-    );
-  }
-}
-
-/// @nodoc
-const $RankingUser = _$RankingUserTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RankingUser {
@@ -92,24 +71,24 @@ class _$RankingUserCopyWithImpl<$Res> implements $RankingUserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RankingUserCopyWith<$Res>
+abstract class _$$_RankingUserCopyWith<$Res>
     implements $RankingUserCopyWith<$Res> {
-  factory _$RankingUserCopyWith(
-          _RankingUser value, $Res Function(_RankingUser) then) =
-      __$RankingUserCopyWithImpl<$Res>;
+  factory _$$_RankingUserCopyWith(
+          _$_RankingUser value, $Res Function(_$_RankingUser) then) =
+      __$$_RankingUserCopyWithImpl<$Res>;
   @override
   $Res call({String nombre, String foto, String distancia, String rank});
 }
 
 /// @nodoc
-class __$RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
-    implements _$RankingUserCopyWith<$Res> {
-  __$RankingUserCopyWithImpl(
-      _RankingUser _value, $Res Function(_RankingUser) _then)
-      : super(_value, (v) => _then(v as _RankingUser));
+class __$$_RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
+    implements _$$_RankingUserCopyWith<$Res> {
+  __$$_RankingUserCopyWithImpl(
+      _$_RankingUser _value, $Res Function(_$_RankingUser) _then)
+      : super(_value, (v) => _then(v as _$_RankingUser));
 
   @override
-  _RankingUser get _value => super._value as _RankingUser;
+  _$_RankingUser get _value => super._value as _$_RankingUser;
 
   @override
   $Res call({
@@ -118,7 +97,7 @@ class __$RankingUserCopyWithImpl<$Res> extends _$RankingUserCopyWithImpl<$Res>
     Object? distancia = freezed,
     Object? rank = freezed,
   }) {
-    return _then(_RankingUser(
+    return _then(_$_RankingUser(
       nombre: nombre == freezed
           ? _value.nombre
           : nombre // ignore: cast_nullable_to_non_nullable
@@ -167,7 +146,7 @@ class _$_RankingUser extends _RankingUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RankingUser &&
+            other is _$_RankingUser &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.foto, foto) &&
             const DeepCollectionEquality().equals(other.distancia, distancia) &&
@@ -184,28 +163,28 @@ class _$_RankingUser extends _RankingUser {
 
   @JsonKey(ignore: true)
   @override
-  _$RankingUserCopyWith<_RankingUser> get copyWith =>
-      __$RankingUserCopyWithImpl<_RankingUser>(this, _$identity);
+  _$$_RankingUserCopyWith<_$_RankingUser> get copyWith =>
+      __$$_RankingUserCopyWithImpl<_$_RankingUser>(this, _$identity);
 }
 
 abstract class _RankingUser extends RankingUser {
   const factory _RankingUser(
-      {required String nombre,
-      required String foto,
-      required String distancia,
-      required String rank}) = _$_RankingUser;
+      {required final String nombre,
+      required final String foto,
+      required final String distancia,
+      required final String rank}) = _$_RankingUser;
   const _RankingUser._() : super._();
 
   @override
-  String get nombre;
+  String get nombre => throw _privateConstructorUsedError;
   @override
-  String get foto;
+  String get foto => throw _privateConstructorUsedError;
   @override
-  String get distancia;
+  String get distancia => throw _privateConstructorUsedError;
   @override
-  String get rank;
+  String get rank => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RankingUserCopyWith<_RankingUser> get copyWith =>
+  _$$_RankingUserCopyWith<_$_RankingUser> get copyWith =>
       throw _privateConstructorUsedError;
 }

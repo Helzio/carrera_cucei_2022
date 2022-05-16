@@ -12,31 +12,7 @@ part of 'login_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LoginStateTearOff {
-  const _$LoginStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Showing showing() {
-    return const _Showing();
-  }
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Registro registro() {
-    return const _Registro();
-  }
-}
-
-/// @nodoc
-const $LoginState = _$LoginStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LoginState {
@@ -109,19 +85,20 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -137,7 +114,7 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -224,19 +201,20 @@ abstract class _Initial extends LoginState {
 }
 
 /// @nodoc
-abstract class _$ShowingCopyWith<$Res> {
-  factory _$ShowingCopyWith(_Showing value, $Res Function(_Showing) then) =
-      __$ShowingCopyWithImpl<$Res>;
+abstract class _$$_ShowingCopyWith<$Res> {
+  factory _$$_ShowingCopyWith(
+          _$_Showing value, $Res Function(_$_Showing) then) =
+      __$$_ShowingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShowingCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$ShowingCopyWith<$Res> {
-  __$ShowingCopyWithImpl(_Showing _value, $Res Function(_Showing) _then)
-      : super(_value, (v) => _then(v as _Showing));
+class __$$_ShowingCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_ShowingCopyWith<$Res> {
+  __$$_ShowingCopyWithImpl(_$_Showing _value, $Res Function(_$_Showing) _then)
+      : super(_value, (v) => _then(v as _$_Showing));
 
   @override
-  _Showing get _value => super._value as _Showing;
+  _$_Showing get _value => super._value as _$_Showing;
 }
 
 /// @nodoc
@@ -252,7 +230,7 @@ class _$_Showing extends _Showing {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Showing);
+        (other.runtimeType == runtimeType && other is _$_Showing);
   }
 
   @override
@@ -339,19 +317,20 @@ abstract class _Showing extends LoginState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class __$$_LoadingCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, (v) => _then(v as _$_Loading));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _$_Loading get _value => super._value as _$_Loading;
 }
 
 /// @nodoc
@@ -367,7 +346,7 @@ class _$_Loading extends _Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -454,19 +433,21 @@ abstract class _Loading extends LoginState {
 }
 
 /// @nodoc
-abstract class _$RegistroCopyWith<$Res> {
-  factory _$RegistroCopyWith(_Registro value, $Res Function(_Registro) then) =
-      __$RegistroCopyWithImpl<$Res>;
+abstract class _$$_RegistroCopyWith<$Res> {
+  factory _$$_RegistroCopyWith(
+          _$_Registro value, $Res Function(_$_Registro) then) =
+      __$$_RegistroCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RegistroCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$RegistroCopyWith<$Res> {
-  __$RegistroCopyWithImpl(_Registro _value, $Res Function(_Registro) _then)
-      : super(_value, (v) => _then(v as _Registro));
+class __$$_RegistroCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$$_RegistroCopyWith<$Res> {
+  __$$_RegistroCopyWithImpl(
+      _$_Registro _value, $Res Function(_$_Registro) _then)
+      : super(_value, (v) => _then(v as _$_Registro));
 
   @override
-  _Registro get _value => super._value as _Registro;
+  _$_Registro get _value => super._value as _$_Registro;
 }
 
 /// @nodoc
@@ -482,7 +463,7 @@ class _$_Registro extends _Registro {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Registro);
+        (other.runtimeType == runtimeType && other is _$_Registro);
   }
 
   @override

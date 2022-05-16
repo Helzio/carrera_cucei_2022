@@ -2,11 +2,14 @@ import 'dart:math';
 
 import 'package:carrera_cucei_2022/features/corredor/providers/corredor_provider.dart';
 import 'package:carrera_cucei_2022/features/login/providers/login_providers.dart';
+import 'package:carrera_cucei_2022/features/navigation/application/navigation_notifier.dart';
+import 'package:carrera_cucei_2022/features/navigation/provider/navigation_provider.dart';
 import 'package:carrera_cucei_2022/features/ranking/providers/ranking_providers.dart';
 import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/presentation/home/drawer/app_drawer.dart';
 import 'package:carrera_cucei_2022/presentation/home/ranking/ranking_widget.dart';
+import 'package:carrera_cucei_2022/presentation/map/map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -66,6 +69,8 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
+  final PageController _controller = PageController();
+
   @override
   void initState() {
     super.initState();
@@ -79,6 +84,15 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<NavigationState>(navigationProvider, (previous, next) {
+      print(next.page);
+      _controller.animateToPage(
+        next.page,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeIn,
+      );
+    });
+
     //mockCorredores.shuffle();
     return WillPopScope(
       onWillPop: () {
@@ -114,18 +128,38 @@ class _HomePageState extends ConsumerState<HomePage> {
               centerTitle: true,
               backgroundColor: Colors.transparent,
               elevation: 0,
-              title: const Text(
-                'Ranking',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              title: const AppbarTitle(),
             ),
-            body: const RankingWidget(),
+            body: PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: _controller,
+              children: const [
+                RankingWidget(),
+                MapPage(),
+              ],
+            ),
             drawer: const AppDrawer(),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class AppbarTitle extends ConsumerWidget {
+  const AppbarTitle({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Text(
+      ref.watch(navigationProvider.select((value) => value.page)) == 0
+          ? "Ranking"
+          : "Mapa",
+      style: const TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

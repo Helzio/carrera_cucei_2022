@@ -101,7 +101,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               ref.read(loginProvider.notifier).setInitial();
               await Future.delayed(const Duration(milliseconds: 500));
               ref.read(corredorProvider.notifier).setCorredor(corredor);
-              AutoRouter.of(context).push(const HomeRoute());
+              AutoRouter.of(context).replace(const HomeRoute());
             },
           );
         },

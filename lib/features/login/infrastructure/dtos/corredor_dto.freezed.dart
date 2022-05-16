@@ -12,44 +12,11 @@ part of 'corredor_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 CorredorDto _$CorredorDtoFromJson(Map<String, dynamic> json) {
   return _CorredorDto.fromJson(json);
 }
-
-/// @nodoc
-class _$CorredorDtoTearOff {
-  const _$CorredorDtoTearOff();
-
-  _CorredorDto call(
-      {@JsonKey(fromJson: idFromJson) required int id,
-      @JsonKey(name: "Nombre") required String nombre,
-      @JsonKey(name: "Codigo") required String codigo,
-      @JsonKey(name: "Correo") required String email,
-      @JsonKey(name: "Telefono") required String phone,
-      @JsonKey(name: "Escuela") required String escuela,
-      @JsonKey(name: "Semestre") required String semestre,
-      @JsonKey(name: "Password") required String password}) {
-    return _CorredorDto(
-      id: id,
-      nombre: nombre,
-      codigo: codigo,
-      email: email,
-      phone: phone,
-      escuela: escuela,
-      semestre: semestre,
-      password: password,
-    );
-  }
-
-  CorredorDto fromJson(Map<String, Object?> json) {
-    return CorredorDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $CorredorDto = _$CorredorDtoTearOff();
 
 /// @nodoc
 mixin _$CorredorDto {
@@ -149,11 +116,11 @@ class _$CorredorDtoCopyWithImpl<$Res> implements $CorredorDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CorredorDtoCopyWith<$Res>
+abstract class _$$_CorredorDtoCopyWith<$Res>
     implements $CorredorDtoCopyWith<$Res> {
-  factory _$CorredorDtoCopyWith(
-          _CorredorDto value, $Res Function(_CorredorDto) then) =
-      __$CorredorDtoCopyWithImpl<$Res>;
+  factory _$$_CorredorDtoCopyWith(
+          _$_CorredorDto value, $Res Function(_$_CorredorDto) then) =
+      __$$_CorredorDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(fromJson: idFromJson) int id,
@@ -167,14 +134,14 @@ abstract class _$CorredorDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CorredorDtoCopyWithImpl<$Res> extends _$CorredorDtoCopyWithImpl<$Res>
-    implements _$CorredorDtoCopyWith<$Res> {
-  __$CorredorDtoCopyWithImpl(
-      _CorredorDto _value, $Res Function(_CorredorDto) _then)
-      : super(_value, (v) => _then(v as _CorredorDto));
+class __$$_CorredorDtoCopyWithImpl<$Res> extends _$CorredorDtoCopyWithImpl<$Res>
+    implements _$$_CorredorDtoCopyWith<$Res> {
+  __$$_CorredorDtoCopyWithImpl(
+      _$_CorredorDto _value, $Res Function(_$_CorredorDto) _then)
+      : super(_value, (v) => _then(v as _$_CorredorDto));
 
   @override
-  _CorredorDto get _value => super._value as _CorredorDto;
+  _$_CorredorDto get _value => super._value as _$_CorredorDto;
 
   @override
   $Res call({
@@ -187,7 +154,7 @@ class __$CorredorDtoCopyWithImpl<$Res> extends _$CorredorDtoCopyWithImpl<$Res>
     Object? semestre = freezed,
     Object? password = freezed,
   }) {
-    return _then(_CorredorDto(
+    return _then(_$_CorredorDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -275,7 +242,7 @@ class _$_CorredorDto extends _CorredorDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CorredorDto &&
+            other is _$_CorredorDto &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.codigo, codigo) &&
@@ -286,6 +253,7 @@ class _$_CorredorDto extends _CorredorDto {
             const DeepCollectionEquality().equals(other.password, password));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -300,8 +268,8 @@ class _$_CorredorDto extends _CorredorDto {
 
   @JsonKey(ignore: true)
   @override
-  _$CorredorDtoCopyWith<_CorredorDto> get copyWith =>
-      __$CorredorDtoCopyWithImpl<_CorredorDto>(this, _$identity);
+  _$$_CorredorDtoCopyWith<_$_CorredorDto> get copyWith =>
+      __$$_CorredorDtoCopyWithImpl<_$_CorredorDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -311,14 +279,15 @@ class _$_CorredorDto extends _CorredorDto {
 
 abstract class _CorredorDto extends CorredorDto {
   const factory _CorredorDto(
-      {@JsonKey(fromJson: idFromJson) required int id,
-      @JsonKey(name: "Nombre") required String nombre,
-      @JsonKey(name: "Codigo") required String codigo,
-      @JsonKey(name: "Correo") required String email,
-      @JsonKey(name: "Telefono") required String phone,
-      @JsonKey(name: "Escuela") required String escuela,
-      @JsonKey(name: "Semestre") required String semestre,
-      @JsonKey(name: "Password") required String password}) = _$_CorredorDto;
+          {@JsonKey(fromJson: idFromJson) required final int id,
+          @JsonKey(name: "Nombre") required final String nombre,
+          @JsonKey(name: "Codigo") required final String codigo,
+          @JsonKey(name: "Correo") required final String email,
+          @JsonKey(name: "Telefono") required final String phone,
+          @JsonKey(name: "Escuela") required final String escuela,
+          @JsonKey(name: "Semestre") required final String semestre,
+          @JsonKey(name: "Password") required final String password}) =
+      _$_CorredorDto;
   const _CorredorDto._() : super._();
 
   factory _CorredorDto.fromJson(Map<String, dynamic> json) =
@@ -326,30 +295,30 @@ abstract class _CorredorDto extends CorredorDto {
 
   @override
   @JsonKey(fromJson: idFromJson)
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Nombre")
-  String get nombre;
+  String get nombre => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Codigo")
-  String get codigo;
+  String get codigo => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Correo")
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Telefono")
-  String get phone;
+  String get phone => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Escuela")
-  String get escuela;
+  String get escuela => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Semestre")
-  String get semestre;
+  String get semestre => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "Password")
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CorredorDtoCopyWith<_CorredorDto> get copyWith =>
+  _$$_CorredorDtoCopyWith<_$_CorredorDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

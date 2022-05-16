@@ -15,6 +15,6 @@ final rankingRepositoryProvider = Provider<RankingRepository>((ref) {
 });
 
 final rankingProvider =
-    StateNotifierProvider.autoDispose<RankingStateNotifier, RankingState>((ref) {
+    StateNotifierProvider<RankingStateNotifier, RankingState>((ref) {
   return RankingStateNotifier(ref.watch(rankingRepositoryProvider));
 });

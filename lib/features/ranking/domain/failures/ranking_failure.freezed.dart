@@ -12,35 +12,7 @@ part of 'ranking_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RankingFailureTearOff {
-  const _$RankingFailureTearOff();
-
-  _Internet internet() {
-    return const _Internet();
-  }
-
-  _Server server() {
-    return const _Server();
-  }
-
-  _UsuarioYaExiste usuarioYaExiste() {
-    return const _UsuarioYaExiste();
-  }
-
-  _SqlConection sqlConection() {
-    return const _SqlConection();
-  }
-
-  _SqlRegister sqlRegister() {
-    return const _SqlRegister();
-  }
-}
-
-/// @nodoc
-const $RankingFailure = _$RankingFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RankingFailure {
@@ -120,19 +92,21 @@ class _$RankingFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InternetCopyWith<$Res> {
-  factory _$InternetCopyWith(_Internet value, $Res Function(_Internet) then) =
-      __$InternetCopyWithImpl<$Res>;
+abstract class _$$_InternetCopyWith<$Res> {
+  factory _$$_InternetCopyWith(
+          _$_Internet value, $Res Function(_$_Internet) then) =
+      __$$_InternetCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InternetCopyWithImpl<$Res> extends _$RankingFailureCopyWithImpl<$Res>
-    implements _$InternetCopyWith<$Res> {
-  __$InternetCopyWithImpl(_Internet _value, $Res Function(_Internet) _then)
-      : super(_value, (v) => _then(v as _Internet));
+class __$$_InternetCopyWithImpl<$Res> extends _$RankingFailureCopyWithImpl<$Res>
+    implements _$$_InternetCopyWith<$Res> {
+  __$$_InternetCopyWithImpl(
+      _$_Internet _value, $Res Function(_$_Internet) _then)
+      : super(_value, (v) => _then(v as _$_Internet));
 
   @override
-  _Internet get _value => super._value as _Internet;
+  _$_Internet get _value => super._value as _$_Internet;
 }
 
 /// @nodoc
@@ -148,7 +122,7 @@ class _$_Internet extends _Internet {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Internet);
+        (other.runtimeType == runtimeType && other is _$_Internet);
   }
 
   @override
@@ -241,19 +215,19 @@ abstract class _Internet extends RankingFailure {
 }
 
 /// @nodoc
-abstract class _$ServerCopyWith<$Res> {
-  factory _$ServerCopyWith(_Server value, $Res Function(_Server) then) =
-      __$ServerCopyWithImpl<$Res>;
+abstract class _$$_ServerCopyWith<$Res> {
+  factory _$$_ServerCopyWith(_$_Server value, $Res Function(_$_Server) then) =
+      __$$_ServerCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerCopyWithImpl<$Res> extends _$RankingFailureCopyWithImpl<$Res>
-    implements _$ServerCopyWith<$Res> {
-  __$ServerCopyWithImpl(_Server _value, $Res Function(_Server) _then)
-      : super(_value, (v) => _then(v as _Server));
+class __$$_ServerCopyWithImpl<$Res> extends _$RankingFailureCopyWithImpl<$Res>
+    implements _$$_ServerCopyWith<$Res> {
+  __$$_ServerCopyWithImpl(_$_Server _value, $Res Function(_$_Server) _then)
+      : super(_value, (v) => _then(v as _$_Server));
 
   @override
-  _Server get _value => super._value as _Server;
+  _$_Server get _value => super._value as _$_Server;
 }
 
 /// @nodoc
@@ -269,7 +243,7 @@ class _$_Server extends _Server {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Server);
+        (other.runtimeType == runtimeType && other is _$_Server);
   }
 
   @override
@@ -362,22 +336,22 @@ abstract class _Server extends RankingFailure {
 }
 
 /// @nodoc
-abstract class _$UsuarioYaExisteCopyWith<$Res> {
-  factory _$UsuarioYaExisteCopyWith(
-          _UsuarioYaExiste value, $Res Function(_UsuarioYaExiste) then) =
-      __$UsuarioYaExisteCopyWithImpl<$Res>;
+abstract class _$$_UsuarioYaExisteCopyWith<$Res> {
+  factory _$$_UsuarioYaExisteCopyWith(
+          _$_UsuarioYaExiste value, $Res Function(_$_UsuarioYaExiste) then) =
+      __$$_UsuarioYaExisteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UsuarioYaExisteCopyWithImpl<$Res>
+class __$$_UsuarioYaExisteCopyWithImpl<$Res>
     extends _$RankingFailureCopyWithImpl<$Res>
-    implements _$UsuarioYaExisteCopyWith<$Res> {
-  __$UsuarioYaExisteCopyWithImpl(
-      _UsuarioYaExiste _value, $Res Function(_UsuarioYaExiste) _then)
-      : super(_value, (v) => _then(v as _UsuarioYaExiste));
+    implements _$$_UsuarioYaExisteCopyWith<$Res> {
+  __$$_UsuarioYaExisteCopyWithImpl(
+      _$_UsuarioYaExiste _value, $Res Function(_$_UsuarioYaExiste) _then)
+      : super(_value, (v) => _then(v as _$_UsuarioYaExiste));
 
   @override
-  _UsuarioYaExiste get _value => super._value as _UsuarioYaExiste;
+  _$_UsuarioYaExiste get _value => super._value as _$_UsuarioYaExiste;
 }
 
 /// @nodoc
@@ -393,7 +367,7 @@ class _$_UsuarioYaExiste extends _UsuarioYaExiste {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UsuarioYaExiste);
+        (other.runtimeType == runtimeType && other is _$_UsuarioYaExiste);
   }
 
   @override
@@ -486,22 +460,22 @@ abstract class _UsuarioYaExiste extends RankingFailure {
 }
 
 /// @nodoc
-abstract class _$SqlConectionCopyWith<$Res> {
-  factory _$SqlConectionCopyWith(
-          _SqlConection value, $Res Function(_SqlConection) then) =
-      __$SqlConectionCopyWithImpl<$Res>;
+abstract class _$$_SqlConectionCopyWith<$Res> {
+  factory _$$_SqlConectionCopyWith(
+          _$_SqlConection value, $Res Function(_$_SqlConection) then) =
+      __$$_SqlConectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SqlConectionCopyWithImpl<$Res>
+class __$$_SqlConectionCopyWithImpl<$Res>
     extends _$RankingFailureCopyWithImpl<$Res>
-    implements _$SqlConectionCopyWith<$Res> {
-  __$SqlConectionCopyWithImpl(
-      _SqlConection _value, $Res Function(_SqlConection) _then)
-      : super(_value, (v) => _then(v as _SqlConection));
+    implements _$$_SqlConectionCopyWith<$Res> {
+  __$$_SqlConectionCopyWithImpl(
+      _$_SqlConection _value, $Res Function(_$_SqlConection) _then)
+      : super(_value, (v) => _then(v as _$_SqlConection));
 
   @override
-  _SqlConection get _value => super._value as _SqlConection;
+  _$_SqlConection get _value => super._value as _$_SqlConection;
 }
 
 /// @nodoc
@@ -517,7 +491,7 @@ class _$_SqlConection extends _SqlConection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SqlConection);
+        (other.runtimeType == runtimeType && other is _$_SqlConection);
   }
 
   @override
@@ -610,22 +584,22 @@ abstract class _SqlConection extends RankingFailure {
 }
 
 /// @nodoc
-abstract class _$SqlRegisterCopyWith<$Res> {
-  factory _$SqlRegisterCopyWith(
-          _SqlRegister value, $Res Function(_SqlRegister) then) =
-      __$SqlRegisterCopyWithImpl<$Res>;
+abstract class _$$_SqlRegisterCopyWith<$Res> {
+  factory _$$_SqlRegisterCopyWith(
+          _$_SqlRegister value, $Res Function(_$_SqlRegister) then) =
+      __$$_SqlRegisterCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SqlRegisterCopyWithImpl<$Res>
+class __$$_SqlRegisterCopyWithImpl<$Res>
     extends _$RankingFailureCopyWithImpl<$Res>
-    implements _$SqlRegisterCopyWith<$Res> {
-  __$SqlRegisterCopyWithImpl(
-      _SqlRegister _value, $Res Function(_SqlRegister) _then)
-      : super(_value, (v) => _then(v as _SqlRegister));
+    implements _$$_SqlRegisterCopyWith<$Res> {
+  __$$_SqlRegisterCopyWithImpl(
+      _$_SqlRegister _value, $Res Function(_$_SqlRegister) _then)
+      : super(_value, (v) => _then(v as _$_SqlRegister));
 
   @override
-  _SqlRegister get _value => super._value as _SqlRegister;
+  _$_SqlRegister get _value => super._value as _$_SqlRegister;
 }
 
 /// @nodoc
@@ -641,7 +615,7 @@ class _$_SqlRegister extends _SqlRegister {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SqlRegister);
+        (other.runtimeType == runtimeType && other is _$_SqlRegister);
   }
 
   @override

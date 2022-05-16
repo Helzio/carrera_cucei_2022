@@ -12,36 +12,11 @@ part of 'ranking_user_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 RankingUserDto _$RankingUserDtoFromJson(Map<String, dynamic> json) {
   return _RankingUserDto.fromJson(json);
 }
-
-/// @nodoc
-class _$RankingUserDtoTearOff {
-  const _$RankingUserDtoTearOff();
-
-  _RankingUserDto call(
-      {@JsonKey(name: 'Nombre') required String nombre,
-      @JsonKey(name: 'Distancia') required String distancia,
-      @JsonKey(name: 'Foto') required String foto,
-      @JsonKey(name: 'rank', defaultValue: "0") required String rank}) {
-    return _RankingUserDto(
-      nombre: nombre,
-      distancia: distancia,
-      foto: foto,
-      rank: rank,
-    );
-  }
-
-  RankingUserDto fromJson(Map<String, Object?> json) {
-    return RankingUserDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $RankingUserDto = _$RankingUserDtoTearOff();
 
 /// @nodoc
 mixin _$RankingUserDto {
@@ -110,11 +85,11 @@ class _$RankingUserDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RankingUserDtoCopyWith<$Res>
+abstract class _$$_RankingUserDtoCopyWith<$Res>
     implements $RankingUserDtoCopyWith<$Res> {
-  factory _$RankingUserDtoCopyWith(
-          _RankingUserDto value, $Res Function(_RankingUserDto) then) =
-      __$RankingUserDtoCopyWithImpl<$Res>;
+  factory _$$_RankingUserDtoCopyWith(
+          _$_RankingUserDto value, $Res Function(_$_RankingUserDto) then) =
+      __$$_RankingUserDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Nombre') String nombre,
@@ -124,15 +99,15 @@ abstract class _$RankingUserDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RankingUserDtoCopyWithImpl<$Res>
+class __$$_RankingUserDtoCopyWithImpl<$Res>
     extends _$RankingUserDtoCopyWithImpl<$Res>
-    implements _$RankingUserDtoCopyWith<$Res> {
-  __$RankingUserDtoCopyWithImpl(
-      _RankingUserDto _value, $Res Function(_RankingUserDto) _then)
-      : super(_value, (v) => _then(v as _RankingUserDto));
+    implements _$$_RankingUserDtoCopyWith<$Res> {
+  __$$_RankingUserDtoCopyWithImpl(
+      _$_RankingUserDto _value, $Res Function(_$_RankingUserDto) _then)
+      : super(_value, (v) => _then(v as _$_RankingUserDto));
 
   @override
-  _RankingUserDto get _value => super._value as _RankingUserDto;
+  _$_RankingUserDto get _value => super._value as _$_RankingUserDto;
 
   @override
   $Res call({
@@ -141,7 +116,7 @@ class __$RankingUserDtoCopyWithImpl<$Res>
     Object? foto = freezed,
     Object? rank = freezed,
   }) {
-    return _then(_RankingUserDto(
+    return _then(_$_RankingUserDto(
       nombre: nombre == freezed
           ? _value.nombre
           : nombre // ignore: cast_nullable_to_non_nullable
@@ -197,13 +172,14 @@ class _$_RankingUserDto extends _RankingUserDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RankingUserDto &&
+            other is _$_RankingUserDto &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.distancia, distancia) &&
             const DeepCollectionEquality().equals(other.foto, foto) &&
             const DeepCollectionEquality().equals(other.rank, rank));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -214,8 +190,8 @@ class _$_RankingUserDto extends _RankingUserDto {
 
   @JsonKey(ignore: true)
   @override
-  _$RankingUserDtoCopyWith<_RankingUserDto> get copyWith =>
-      __$RankingUserDtoCopyWithImpl<_RankingUserDto>(this, _$identity);
+  _$$_RankingUserDtoCopyWith<_$_RankingUserDto> get copyWith =>
+      __$$_RankingUserDtoCopyWithImpl<_$_RankingUserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -225,11 +201,14 @@ class _$_RankingUserDto extends _RankingUserDto {
 
 abstract class _RankingUserDto extends RankingUserDto {
   const factory _RankingUserDto(
-          {@JsonKey(name: 'Nombre') required String nombre,
-          @JsonKey(name: 'Distancia') required String distancia,
-          @JsonKey(name: 'Foto') required String foto,
-          @JsonKey(name: 'rank', defaultValue: "0") required String rank}) =
-      _$_RankingUserDto;
+      {@JsonKey(name: 'Nombre')
+          required final String nombre,
+      @JsonKey(name: 'Distancia')
+          required final String distancia,
+      @JsonKey(name: 'Foto')
+          required final String foto,
+      @JsonKey(name: 'rank', defaultValue: "0")
+          required final String rank}) = _$_RankingUserDto;
   const _RankingUserDto._() : super._();
 
   factory _RankingUserDto.fromJson(Map<String, dynamic> json) =
@@ -237,18 +216,18 @@ abstract class _RankingUserDto extends RankingUserDto {
 
   @override
   @JsonKey(name: 'Nombre')
-  String get nombre;
+  String get nombre => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Distancia')
-  String get distancia;
+  String get distancia => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Foto')
-  String get foto;
+  String get foto => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'rank', defaultValue: "0")
-  String get rank;
+  String get rank => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RankingUserDtoCopyWith<_RankingUserDto> get copyWith =>
+  _$$_RankingUserDtoCopyWith<_$_RankingUserDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

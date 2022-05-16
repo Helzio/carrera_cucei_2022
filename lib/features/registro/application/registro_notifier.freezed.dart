@@ -12,38 +12,7 @@ part of 'registro_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RegistroStateTearOff {
-  const _$RegistroStateTearOff();
-
-  _RegistroState call(
-      {required String nombre,
-      required String codigo,
-      required String password,
-      required String telefono,
-      required String email,
-      required String escuela,
-      required String semestre,
-      required bool loading,
-      required Option<Either<RegistroFailure, Unit>> option}) {
-    return _RegistroState(
-      nombre: nombre,
-      codigo: codigo,
-      password: password,
-      telefono: telefono,
-      email: email,
-      escuela: escuela,
-      semestre: semestre,
-      loading: loading,
-      option: option,
-    );
-  }
-}
-
-/// @nodoc
-const $RegistroState = _$RegistroStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RegistroState {
@@ -143,11 +112,11 @@ class _$RegistroStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RegistroStateCopyWith<$Res>
+abstract class _$$_RegistroStateCopyWith<$Res>
     implements $RegistroStateCopyWith<$Res> {
-  factory _$RegistroStateCopyWith(
-          _RegistroState value, $Res Function(_RegistroState) then) =
-      __$RegistroStateCopyWithImpl<$Res>;
+  factory _$$_RegistroStateCopyWith(
+          _$_RegistroState value, $Res Function(_$_RegistroState) then) =
+      __$$_RegistroStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String nombre,
@@ -162,15 +131,15 @@ abstract class _$RegistroStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$RegistroStateCopyWithImpl<$Res>
+class __$$_RegistroStateCopyWithImpl<$Res>
     extends _$RegistroStateCopyWithImpl<$Res>
-    implements _$RegistroStateCopyWith<$Res> {
-  __$RegistroStateCopyWithImpl(
-      _RegistroState _value, $Res Function(_RegistroState) _then)
-      : super(_value, (v) => _then(v as _RegistroState));
+    implements _$$_RegistroStateCopyWith<$Res> {
+  __$$_RegistroStateCopyWithImpl(
+      _$_RegistroState _value, $Res Function(_$_RegistroState) _then)
+      : super(_value, (v) => _then(v as _$_RegistroState));
 
   @override
-  _RegistroState get _value => super._value as _RegistroState;
+  _$_RegistroState get _value => super._value as _$_RegistroState;
 
   @override
   $Res call({
@@ -184,7 +153,7 @@ class __$RegistroStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? option = freezed,
   }) {
-    return _then(_RegistroState(
+    return _then(_$_RegistroState(
       nombre: nombre == freezed
           ? _value.nombre
           : nombre // ignore: cast_nullable_to_non_nullable
@@ -268,7 +237,7 @@ class _$_RegistroState extends _RegistroState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RegistroState &&
+            other is _$_RegistroState &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.codigo, codigo) &&
             const DeepCollectionEquality().equals(other.password, password) &&
@@ -295,44 +264,45 @@ class _$_RegistroState extends _RegistroState {
 
   @JsonKey(ignore: true)
   @override
-  _$RegistroStateCopyWith<_RegistroState> get copyWith =>
-      __$RegistroStateCopyWithImpl<_RegistroState>(this, _$identity);
+  _$$_RegistroStateCopyWith<_$_RegistroState> get copyWith =>
+      __$$_RegistroStateCopyWithImpl<_$_RegistroState>(this, _$identity);
 }
 
 abstract class _RegistroState extends RegistroState {
   const factory _RegistroState(
-          {required String nombre,
-          required String codigo,
-          required String password,
-          required String telefono,
-          required String email,
-          required String escuela,
-          required String semestre,
-          required bool loading,
-          required Option<Either<RegistroFailure, Unit>> option}) =
+          {required final String nombre,
+          required final String codigo,
+          required final String password,
+          required final String telefono,
+          required final String email,
+          required final String escuela,
+          required final String semestre,
+          required final bool loading,
+          required final Option<Either<RegistroFailure, Unit>> option}) =
       _$_RegistroState;
   const _RegistroState._() : super._();
 
   @override
-  String get nombre;
+  String get nombre => throw _privateConstructorUsedError;
   @override
-  String get codigo;
+  String get codigo => throw _privateConstructorUsedError;
   @override
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
-  String get telefono;
+  String get telefono => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get escuela;
+  String get escuela => throw _privateConstructorUsedError;
   @override
-  String get semestre;
+  String get semestre => throw _privateConstructorUsedError;
   @override
-  bool get loading;
+  bool get loading => throw _privateConstructorUsedError;
   @override
-  Option<Either<RegistroFailure, Unit>> get option;
+  Option<Either<RegistroFailure, Unit>> get option =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RegistroStateCopyWith<_RegistroState> get copyWith =>
+  _$$_RegistroStateCopyWith<_$_RegistroState> get copyWith =>
       throw _privateConstructorUsedError;
 }

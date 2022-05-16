@@ -12,36 +12,7 @@ part of 'corredor.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CorredorTearOff {
-  const _$CorredorTearOff();
-
-  _Corredor call(
-      {required int id,
-      required String nombre,
-      required String codigo,
-      required String email,
-      required String phone,
-      required String escuela,
-      required String semestre,
-      required String password}) {
-    return _Corredor(
-      id: id,
-      nombre: nombre,
-      codigo: codigo,
-      email: email,
-      phone: phone,
-      escuela: escuela,
-      semestre: semestre,
-      password: password,
-    );
-  }
-}
-
-/// @nodoc
-const $Corredor = _$CorredorTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Corredor {
@@ -131,9 +102,10 @@ class _$CorredorCopyWithImpl<$Res> implements $CorredorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CorredorCopyWith<$Res> implements $CorredorCopyWith<$Res> {
-  factory _$CorredorCopyWith(_Corredor value, $Res Function(_Corredor) then) =
-      __$CorredorCopyWithImpl<$Res>;
+abstract class _$$_CorredorCopyWith<$Res> implements $CorredorCopyWith<$Res> {
+  factory _$$_CorredorCopyWith(
+          _$_Corredor value, $Res Function(_$_Corredor) then) =
+      __$$_CorredorCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -147,13 +119,14 @@ abstract class _$CorredorCopyWith<$Res> implements $CorredorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CorredorCopyWithImpl<$Res> extends _$CorredorCopyWithImpl<$Res>
-    implements _$CorredorCopyWith<$Res> {
-  __$CorredorCopyWithImpl(_Corredor _value, $Res Function(_Corredor) _then)
-      : super(_value, (v) => _then(v as _Corredor));
+class __$$_CorredorCopyWithImpl<$Res> extends _$CorredorCopyWithImpl<$Res>
+    implements _$$_CorredorCopyWith<$Res> {
+  __$$_CorredorCopyWithImpl(
+      _$_Corredor _value, $Res Function(_$_Corredor) _then)
+      : super(_value, (v) => _then(v as _$_Corredor));
 
   @override
-  _Corredor get _value => super._value as _Corredor;
+  _$_Corredor get _value => super._value as _$_Corredor;
 
   @override
   $Res call({
@@ -166,7 +139,7 @@ class __$CorredorCopyWithImpl<$Res> extends _$CorredorCopyWithImpl<$Res>
     Object? semestre = freezed,
     Object? password = freezed,
   }) {
-    return _then(_Corredor(
+    return _then(_$_Corredor(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -243,7 +216,7 @@ class _$_Corredor extends _Corredor {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Corredor &&
+            other is _$_Corredor &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.codigo, codigo) &&
@@ -268,40 +241,40 @@ class _$_Corredor extends _Corredor {
 
   @JsonKey(ignore: true)
   @override
-  _$CorredorCopyWith<_Corredor> get copyWith =>
-      __$CorredorCopyWithImpl<_Corredor>(this, _$identity);
+  _$$_CorredorCopyWith<_$_Corredor> get copyWith =>
+      __$$_CorredorCopyWithImpl<_$_Corredor>(this, _$identity);
 }
 
 abstract class _Corredor extends Corredor {
   const factory _Corredor(
-      {required int id,
-      required String nombre,
-      required String codigo,
-      required String email,
-      required String phone,
-      required String escuela,
-      required String semestre,
-      required String password}) = _$_Corredor;
+      {required final int id,
+      required final String nombre,
+      required final String codigo,
+      required final String email,
+      required final String phone,
+      required final String escuela,
+      required final String semestre,
+      required final String password}) = _$_Corredor;
   const _Corredor._() : super._();
 
   @override
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
-  String get nombre;
+  String get nombre => throw _privateConstructorUsedError;
   @override
-  String get codigo;
+  String get codigo => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get phone;
+  String get phone => throw _privateConstructorUsedError;
   @override
-  String get escuela;
+  String get escuela => throw _privateConstructorUsedError;
   @override
-  String get semestre;
+  String get semestre => throw _privateConstructorUsedError;
   @override
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CorredorCopyWith<_Corredor> get copyWith =>
+  _$$_CorredorCopyWith<_$_Corredor> get copyWith =>
       throw _privateConstructorUsedError;
 }

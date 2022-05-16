@@ -12,27 +12,7 @@ part of 'login_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LoginFailureTearOff {
-  const _$LoginFailureTearOff();
-
-  _Internet internet() {
-    return const _Internet();
-  }
-
-  _Server server() {
-    return const _Server();
-  }
-
-  _DatosInvalidos datosInvalidos() {
-    return const _DatosInvalidos();
-  }
-}
-
-/// @nodoc
-const $LoginFailure = _$LoginFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LoginFailure {
@@ -99,19 +79,21 @@ class _$LoginFailureCopyWithImpl<$Res> implements $LoginFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InternetCopyWith<$Res> {
-  factory _$InternetCopyWith(_Internet value, $Res Function(_Internet) then) =
-      __$InternetCopyWithImpl<$Res>;
+abstract class _$$_InternetCopyWith<$Res> {
+  factory _$$_InternetCopyWith(
+          _$_Internet value, $Res Function(_$_Internet) then) =
+      __$$_InternetCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InternetCopyWithImpl<$Res> extends _$LoginFailureCopyWithImpl<$Res>
-    implements _$InternetCopyWith<$Res> {
-  __$InternetCopyWithImpl(_Internet _value, $Res Function(_Internet) _then)
-      : super(_value, (v) => _then(v as _Internet));
+class __$$_InternetCopyWithImpl<$Res> extends _$LoginFailureCopyWithImpl<$Res>
+    implements _$$_InternetCopyWith<$Res> {
+  __$$_InternetCopyWithImpl(
+      _$_Internet _value, $Res Function(_$_Internet) _then)
+      : super(_value, (v) => _then(v as _$_Internet));
 
   @override
-  _Internet get _value => super._value as _Internet;
+  _$_Internet get _value => super._value as _$_Internet;
 }
 
 /// @nodoc
@@ -127,7 +109,7 @@ class _$_Internet extends _Internet {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Internet);
+        (other.runtimeType == runtimeType && other is _$_Internet);
   }
 
   @override
@@ -208,19 +190,19 @@ abstract class _Internet extends LoginFailure {
 }
 
 /// @nodoc
-abstract class _$ServerCopyWith<$Res> {
-  factory _$ServerCopyWith(_Server value, $Res Function(_Server) then) =
-      __$ServerCopyWithImpl<$Res>;
+abstract class _$$_ServerCopyWith<$Res> {
+  factory _$$_ServerCopyWith(_$_Server value, $Res Function(_$_Server) then) =
+      __$$_ServerCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerCopyWithImpl<$Res> extends _$LoginFailureCopyWithImpl<$Res>
-    implements _$ServerCopyWith<$Res> {
-  __$ServerCopyWithImpl(_Server _value, $Res Function(_Server) _then)
-      : super(_value, (v) => _then(v as _Server));
+class __$$_ServerCopyWithImpl<$Res> extends _$LoginFailureCopyWithImpl<$Res>
+    implements _$$_ServerCopyWith<$Res> {
+  __$$_ServerCopyWithImpl(_$_Server _value, $Res Function(_$_Server) _then)
+      : super(_value, (v) => _then(v as _$_Server));
 
   @override
-  _Server get _value => super._value as _Server;
+  _$_Server get _value => super._value as _$_Server;
 }
 
 /// @nodoc
@@ -236,7 +218,7 @@ class _$_Server extends _Server {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Server);
+        (other.runtimeType == runtimeType && other is _$_Server);
   }
 
   @override
@@ -317,22 +299,22 @@ abstract class _Server extends LoginFailure {
 }
 
 /// @nodoc
-abstract class _$DatosInvalidosCopyWith<$Res> {
-  factory _$DatosInvalidosCopyWith(
-          _DatosInvalidos value, $Res Function(_DatosInvalidos) then) =
-      __$DatosInvalidosCopyWithImpl<$Res>;
+abstract class _$$_DatosInvalidosCopyWith<$Res> {
+  factory _$$_DatosInvalidosCopyWith(
+          _$_DatosInvalidos value, $Res Function(_$_DatosInvalidos) then) =
+      __$$_DatosInvalidosCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DatosInvalidosCopyWithImpl<$Res>
+class __$$_DatosInvalidosCopyWithImpl<$Res>
     extends _$LoginFailureCopyWithImpl<$Res>
-    implements _$DatosInvalidosCopyWith<$Res> {
-  __$DatosInvalidosCopyWithImpl(
-      _DatosInvalidos _value, $Res Function(_DatosInvalidos) _then)
-      : super(_value, (v) => _then(v as _DatosInvalidos));
+    implements _$$_DatosInvalidosCopyWith<$Res> {
+  __$$_DatosInvalidosCopyWithImpl(
+      _$_DatosInvalidos _value, $Res Function(_$_DatosInvalidos) _then)
+      : super(_value, (v) => _then(v as _$_DatosInvalidos));
 
   @override
-  _DatosInvalidos get _value => super._value as _DatosInvalidos;
+  _$_DatosInvalidos get _value => super._value as _$_DatosInvalidos;
 }
 
 /// @nodoc
@@ -348,7 +330,7 @@ class _$_DatosInvalidos extends _DatosInvalidos {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DatosInvalidos);
+        (other.runtimeType == runtimeType && other is _$_DatosInvalidos);
   }
 
   @override

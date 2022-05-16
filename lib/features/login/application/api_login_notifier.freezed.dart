@@ -12,28 +12,7 @@ part of 'api_login_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ApiLoginStateTearOff {
-  const _$ApiLoginStateTearOff();
-
-  _ApiLoginState call(
-      {required String email,
-      required String password,
-      required bool loading,
-      required Option<Either<LoginFailure, Corredor>> option}) {
-    return _ApiLoginState(
-      email: email,
-      password: password,
-      loading: loading,
-      option: option,
-    );
-  }
-}
-
-/// @nodoc
-const $ApiLoginState = _$ApiLoginStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ApiLoginState {
@@ -98,11 +77,11 @@ class _$ApiLoginStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ApiLoginStateCopyWith<$Res>
+abstract class _$$_ApiLoginStateCopyWith<$Res>
     implements $ApiLoginStateCopyWith<$Res> {
-  factory _$ApiLoginStateCopyWith(
-          _ApiLoginState value, $Res Function(_ApiLoginState) then) =
-      __$ApiLoginStateCopyWithImpl<$Res>;
+  factory _$$_ApiLoginStateCopyWith(
+          _$_ApiLoginState value, $Res Function(_$_ApiLoginState) then) =
+      __$$_ApiLoginStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -112,15 +91,15 @@ abstract class _$ApiLoginStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ApiLoginStateCopyWithImpl<$Res>
+class __$$_ApiLoginStateCopyWithImpl<$Res>
     extends _$ApiLoginStateCopyWithImpl<$Res>
-    implements _$ApiLoginStateCopyWith<$Res> {
-  __$ApiLoginStateCopyWithImpl(
-      _ApiLoginState _value, $Res Function(_ApiLoginState) _then)
-      : super(_value, (v) => _then(v as _ApiLoginState));
+    implements _$$_ApiLoginStateCopyWith<$Res> {
+  __$$_ApiLoginStateCopyWithImpl(
+      _$_ApiLoginState _value, $Res Function(_$_ApiLoginState) _then)
+      : super(_value, (v) => _then(v as _$_ApiLoginState));
 
   @override
-  _ApiLoginState get _value => super._value as _ApiLoginState;
+  _$_ApiLoginState get _value => super._value as _$_ApiLoginState;
 
   @override
   $Res call({
@@ -129,7 +108,7 @@ class __$ApiLoginStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? option = freezed,
   }) {
-    return _then(_ApiLoginState(
+    return _then(_$_ApiLoginState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -178,7 +157,7 @@ class _$_ApiLoginState extends _ApiLoginState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ApiLoginState &&
+            other is _$_ApiLoginState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.loading, loading) &&
@@ -195,29 +174,30 @@ class _$_ApiLoginState extends _ApiLoginState {
 
   @JsonKey(ignore: true)
   @override
-  _$ApiLoginStateCopyWith<_ApiLoginState> get copyWith =>
-      __$ApiLoginStateCopyWithImpl<_ApiLoginState>(this, _$identity);
+  _$$_ApiLoginStateCopyWith<_$_ApiLoginState> get copyWith =>
+      __$$_ApiLoginStateCopyWithImpl<_$_ApiLoginState>(this, _$identity);
 }
 
 abstract class _ApiLoginState extends ApiLoginState {
   const factory _ApiLoginState(
-          {required String email,
-          required String password,
-          required bool loading,
-          required Option<Either<LoginFailure, Corredor>> option}) =
+          {required final String email,
+          required final String password,
+          required final bool loading,
+          required final Option<Either<LoginFailure, Corredor>> option}) =
       _$_ApiLoginState;
   const _ApiLoginState._() : super._();
 
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
-  bool get loading;
+  bool get loading => throw _privateConstructorUsedError;
   @override
-  Option<Either<LoginFailure, Corredor>> get option;
+  Option<Either<LoginFailure, Corredor>> get option =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ApiLoginStateCopyWith<_ApiLoginState> get copyWith =>
+  _$$_ApiLoginStateCopyWith<_$_ApiLoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
