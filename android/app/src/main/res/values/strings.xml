@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="mapbox_access_token">pk.eyJ1IjoiY2hlY2toZWx6aW8iLCJhIjoiY2wzOHplbXh3MDBzdzNqbWtoMnpmOW4zYyJ9.-RtwRODUhF27Gmh4TdOe0Q</string>
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
 </resources>

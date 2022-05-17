@@ -76,7 +76,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.initState();
     Future.microtask(() {
       ref.read(rankingProvider.notifier).getRanking();
-      return ref
+      ref
           .read(rankingmeProvider.notifier)
           .getRanking(codigo: ref.read(corredorProvider).corredor.codigo);
     });
