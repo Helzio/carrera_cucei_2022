@@ -9,7 +9,7 @@ import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_provid
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/presentation/home/drawer/app_drawer.dart';
 import 'package:carrera_cucei_2022/presentation/home/ranking/ranking_widget.dart';
-import 'package:carrera_cucei_2022/presentation/map/map_page.dart';
+import 'package:carrera_cucei_2022/presentation/progreso/progreso_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -135,7 +135,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               controller: _controller,
               children: const [
                 RankingWidget(),
-                MapPage(),
+                ProgresoPage(),
               ],
             ),
             drawer: const AppDrawer(),
@@ -156,7 +156,7 @@ class AppbarTitle extends ConsumerWidget {
     return Text(
       ref.watch(navigationProvider.select((value) => value.page)) == 0
           ? "Ranking"
-          : "Mapa",
+          : "",
       style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,

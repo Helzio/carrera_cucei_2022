@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carrera_cucei_2022/features/ranking/providers/ranking_providers.dart';
-import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';

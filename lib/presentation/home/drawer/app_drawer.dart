@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carrera_cucei_2022/features/corredor/providers/corredor_provider.dart';
 import 'package:carrera_cucei_2022/features/login/providers/login_providers.dart';
 import 'package:carrera_cucei_2022/features/navigation/provider/navigation_provider.dart';
+import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/routes/app_route.gr.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,8 @@ class AppDrawer extends ConsumerWidget {
   ) {
     final corredor =
         ref.watch(corredorProvider.select((value) => value.corredor));
+
+    final meState = ref.watch(rankingmeProvider);
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(
@@ -59,15 +62,21 @@ class AppDrawer extends ConsumerWidget {
                       children: [
                         Stack(
                           alignment: Alignment.center,
-                          children: const [
-                            CircleAvatar(
+                          children: [
+                            const CircleAvatar(
                               radius: 41,
                               backgroundColor: Colors.white,
                             ),
                             CircleAvatar(
                               radius: 40,
                               backgroundImage: CachedNetworkImageProvider(
-                                "https://scontent.fgdl1-3.fna.fbcdn.net/v/t1.18169-9/379401_1679270277172_722915003_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=174925&_nc_eui2=AeFGz7jCE3qBqWBYh94oil2Py6cq4mhI8IPLpyriaEjwgzM6orC0fiNbue8LKyBWEds&_nc_ohc=YU-D7hdLhigAX-PieOU&_nc_pt=1&_nc_ht=scontent.fgdl1-3.fna&oh=00_AT9z4CkFvpRlx5IRJnbvPl76rpzS1s0KjgsODm-cF_hLIg&oe=62645A72",
+                                meState.maybeWhen(
+                                  orElse: () =>
+                                      "https://carreraapp.000webhostapp.com/imagenes/userDefault.png",
+                                  loaded: (user) =>
+                                      "https://carreraapp.000webhostapp.com/imagenes/running.png",
+                                  failure: (f) => "",
+                                ),
                               ),
                             ),
                           ],
@@ -143,9 +152,9 @@ class AppDrawer extends ConsumerWidget {
                       Scaffold.of(context).closeDrawer();
                     },
                     leading: const Icon(
-                      MdiIcons.map,
+                      MdiIcons.run,
                     ),
-                    title: const Text("Mapa"),
+                    title: const Text("Mi progreso"),
                   ),
                   const Divider(),
                   const SizedBox(
