@@ -32,6 +32,7 @@ class _MapPageState extends ConsumerState<MapPage> {
     return Scaffold(
       body: GoogleMap(
         zoomControlsEnabled: false,
+        myLocationEnabled: true,
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) async {
           _controller.complete(controller);

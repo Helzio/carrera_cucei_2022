@@ -20,6 +20,9 @@ class ProgresoPage extends ConsumerWidget {
             colors: [
               colorPrimary,
               colorPrimary,
+              colorPrimary,
+              Colors.transparent,
+              Colors.transparent,
               Colors.transparent,
               Colors.transparent,
             ],
@@ -32,7 +35,7 @@ class ProgresoPage extends ConsumerWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
+                  padding: const EdgeInsets.only(bottom: 48.0),
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton.icon(
@@ -42,7 +45,7 @@ class ProgresoPage extends ConsumerWidget {
                         shape: const StadiumBorder(),
                       ),
                       icon: const Icon(MdiIcons.run),
-                      label: const Text("Iniciar caminata"),
+                      label: const Text("Comenzar a correr"),
                     ),
                   ),
                 ),
@@ -57,7 +60,7 @@ class ProgresoPage extends ConsumerWidget {
               end: Alignment.bottomCenter,
               colors: [
                 Colors.transparent,
-                colorPrimary.withOpacity(.3),
+                colorPrimary.withOpacity(.25),
               ],
             ),
           ),
@@ -67,6 +70,9 @@ class ProgresoPage extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(
+                height: 8,
+              ),
               SizedBox(
                 height: 181,
                 child: Row(
@@ -82,9 +88,7 @@ class ProgresoPage extends ConsumerWidget {
                               meState.maybeWhen(
                                 orElse: () =>
                                     "https://scontent.fgdl10-1.fna.fbcdn.net/v/t39.30808-6/269982262_10209642748421076_5791888956522992241_n.jpg?_nc_cat=109&ccb=1-6&_nc_sid=09cbfe&_nc_eui2=AeHvYbd2S7kBtZQ_hMXZ8O4-PutGADEcY4Q-60YAMRxjhOa67O_0dd1c3NWrOn9CQac&_nc_ohc=DzqVbagSo1AAX_34f6H&_nc_pt=1&_nc_ht=scontent.fgdl10-1.fna&oh=00_AT_cmKUg9HW7qqkBUR6UMzT1gaU_zPeKuGMRKdcinlsgmg&oe=628ADFD3",
-                                loaded: (user) =>
-                                    "https://scontent.fgdl10-1.fna.fbcdn.net/v/t39.30808-6/269982262_10209642748421076_5791888956522992241_n.jpg?_nc_cat=109&ccb=1-6&_nc_sid=09cbfe&_nc_eui2=AeHvYbd2S7kBtZQ_hMXZ8O4-PutGADEcY4Q-60YAMRxjhOa67O_0dd1c3NWrOn9CQac&_nc_ohc=DzqVbagSo1AAX_34f6H&_nc_pt=1&_nc_ht=scontent.fgdl10-1.fna&oh=00_AT_cmKUg9HW7qqkBUR6UMzT1gaU_zPeKuGMRKdcinlsgmg&oe=628ADFD3",
-                                failure: (f) => "",
+                                loaded: (user) => user.foto,
                               ),
                             ),
                           ),
@@ -121,6 +125,36 @@ class ProgresoPage extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          const Text(
+                            "Ranking",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                          RichText(
+                            text: TextSpan(
+                              text: meState.maybeWhen(
+                                orElse: () => "Cargando...",
+                                loaded: (user) => user.rank,
+                                failure: (f) => "",
+                              ),
+                              style: const TextStyle(
+                                fontSize: 21,
+                                fontWeight: FontWeight.bold,
+                                color: colorPrimary,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          const Divider(
+                            color: Colors.white70,
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
                           const Text(
                             "Distancia",
                             style: TextStyle(
@@ -194,36 +228,6 @@ class ProgresoPage extends ConsumerWidget {
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Divider(
-                            color: Colors.white70,
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text(
-                            "Ranking",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                            ),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: meState.maybeWhen(
-                                orElse: () => "Cargando...",
-                                loaded: (user) => user.rank,
-                                failure: (f) => "",
-                              ),
-                              style: const TextStyle(
-                                fontSize: 21,
-                                fontWeight: FontWeight.bold,
-                                color: colorPrimary,
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                     ),
@@ -241,7 +245,6 @@ class ProgresoPage extends ConsumerWidget {
                 ),
                 style: const TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
                   color: colorPrimary,
                 ),
               ),
@@ -252,8 +255,7 @@ class ProgresoPage extends ConsumerWidget {
                   failure: (f) => "",
                 ),
                 style: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
                   color: Colors.white,
                 ),
               ),

@@ -156,7 +156,7 @@ class AppbarTitle extends ConsumerWidget {
     return Text(
       ref.watch(navigationProvider.select((value) => value.page)) == 0
           ? "Ranking"
-          : "",
+          : "Mi progreso",
       style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
