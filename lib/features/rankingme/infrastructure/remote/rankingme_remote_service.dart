@@ -28,6 +28,7 @@ class RankingmeRemoteService {
 
     if (response.statusCode == 200) {
       final data = response.data;
+      print(data);
       if (data.toString().contains("Nombre")) {
         final stringData = data.toString();
         return RankingUserDto.fromJson(

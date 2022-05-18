@@ -41,8 +41,8 @@ class AppDrawer extends ConsumerWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  colorPrimary.withOpacity(.3),
-                  colorPrimary.withOpacity(.7),
+                  colorPrimary.withOpacity(.2),
+                  colorPrimary.withOpacity(.5),
                 ],
               ),
             ),
@@ -74,7 +74,7 @@ class AppDrawer extends ConsumerWidget {
                                   orElse: () =>
                                       "https://carreraapp.000webhostapp.com/imagenes/userDefault.png",
                                   loaded: (user) =>
-                                      "https://carreraapp.000webhostapp.com/imagenes/running.png",
+                                      "https://scontent.fgdl10-1.fna.fbcdn.net/v/t39.30808-6/269982262_10209642748421076_5791888956522992241_n.jpg?_nc_cat=109&ccb=1-6&_nc_sid=09cbfe&_nc_eui2=AeHvYbd2S7kBtZQ_hMXZ8O4-PutGADEcY4Q-60YAMRxjhOa67O_0dd1c3NWrOn9CQac&_nc_ohc=DzqVbagSo1AAX_34f6H&_nc_pt=1&_nc_ht=scontent.fgdl10-1.fna&oh=00_AT_cmKUg9HW7qqkBUR6UMzT1gaU_zPeKuGMRKdcinlsgmg&oe=628ADFD3",
                                   failure: (f) => "",
                                 ),
                               ),

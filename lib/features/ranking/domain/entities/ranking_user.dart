@@ -7,7 +7,9 @@ class RankingUser with _$RankingUser {
   const factory RankingUser({
     required String nombre,
     required String foto,
+    required String escuela,
     required String distancia,
     required String rank,
+    required String tiempo,
   }) = _RankingUser;
 }

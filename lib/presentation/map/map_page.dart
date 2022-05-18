@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -30,10 +31,13 @@ class _MapPageState extends ConsumerState<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
-        mapType: MapType.hybrid,
+        zoomControlsEnabled: false,
         initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
+        onMapCreated: (GoogleMapController controller) async {
           _controller.complete(controller);
+          controller.setMapStyle(
+            await rootBundle.loadString('assets/map/dark.json'),
+          );
         },
       ),
     );

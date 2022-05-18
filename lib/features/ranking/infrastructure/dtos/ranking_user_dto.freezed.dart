@@ -24,8 +24,12 @@ mixin _$RankingUserDto {
   String get nombre => throw _privateConstructorUsedError;
   @JsonKey(name: 'Distancia')
   String get distancia => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Escuela', defaultValue: "")
+  String get escuela => throw _privateConstructorUsedError;
   @JsonKey(name: 'Foto')
   String get foto => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Tiempo', defaultValue: "0")
+  String get tiempo => throw _privateConstructorUsedError;
   @JsonKey(name: 'rank', defaultValue: "0")
   String get rank => throw _privateConstructorUsedError;
 
@@ -43,7 +47,9 @@ abstract class $RankingUserDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'Nombre') String nombre,
       @JsonKey(name: 'Distancia') String distancia,
+      @JsonKey(name: 'Escuela', defaultValue: "") String escuela,
       @JsonKey(name: 'Foto') String foto,
+      @JsonKey(name: 'Tiempo', defaultValue: "0") String tiempo,
       @JsonKey(name: 'rank', defaultValue: "0") String rank});
 }
 
@@ -60,7 +66,9 @@ class _$RankingUserDtoCopyWithImpl<$Res>
   $Res call({
     Object? nombre = freezed,
     Object? distancia = freezed,
+    Object? escuela = freezed,
     Object? foto = freezed,
+    Object? tiempo = freezed,
     Object? rank = freezed,
   }) {
     return _then(_value.copyWith(
@@ -72,9 +80,17 @@ class _$RankingUserDtoCopyWithImpl<$Res>
           ? _value.distancia
           : distancia // ignore: cast_nullable_to_non_nullable
               as String,
+      escuela: escuela == freezed
+          ? _value.escuela
+          : escuela // ignore: cast_nullable_to_non_nullable
+              as String,
       foto: foto == freezed
           ? _value.foto
           : foto // ignore: cast_nullable_to_non_nullable
+              as String,
+      tiempo: tiempo == freezed
+          ? _value.tiempo
+          : tiempo // ignore: cast_nullable_to_non_nullable
               as String,
       rank: rank == freezed
           ? _value.rank
@@ -94,7 +110,9 @@ abstract class _$$_RankingUserDtoCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'Nombre') String nombre,
       @JsonKey(name: 'Distancia') String distancia,
+      @JsonKey(name: 'Escuela', defaultValue: "") String escuela,
       @JsonKey(name: 'Foto') String foto,
+      @JsonKey(name: 'Tiempo', defaultValue: "0") String tiempo,
       @JsonKey(name: 'rank', defaultValue: "0") String rank});
 }
 
@@ -113,7 +131,9 @@ class __$$_RankingUserDtoCopyWithImpl<$Res>
   $Res call({
     Object? nombre = freezed,
     Object? distancia = freezed,
+    Object? escuela = freezed,
     Object? foto = freezed,
+    Object? tiempo = freezed,
     Object? rank = freezed,
   }) {
     return _then(_$_RankingUserDto(
@@ -125,9 +145,17 @@ class __$$_RankingUserDtoCopyWithImpl<$Res>
           ? _value.distancia
           : distancia // ignore: cast_nullable_to_non_nullable
               as String,
+      escuela: escuela == freezed
+          ? _value.escuela
+          : escuela // ignore: cast_nullable_to_non_nullable
+              as String,
       foto: foto == freezed
           ? _value.foto
           : foto // ignore: cast_nullable_to_non_nullable
+              as String,
+      tiempo: tiempo == freezed
+          ? _value.tiempo
+          : tiempo // ignore: cast_nullable_to_non_nullable
               as String,
       rank: rank == freezed
           ? _value.rank
@@ -143,7 +171,9 @@ class _$_RankingUserDto extends _RankingUserDto {
   const _$_RankingUserDto(
       {@JsonKey(name: 'Nombre') required this.nombre,
       @JsonKey(name: 'Distancia') required this.distancia,
+      @JsonKey(name: 'Escuela', defaultValue: "") required this.escuela,
       @JsonKey(name: 'Foto') required this.foto,
+      @JsonKey(name: 'Tiempo', defaultValue: "0") required this.tiempo,
       @JsonKey(name: 'rank', defaultValue: "0") required this.rank})
       : super._();
 
@@ -157,15 +187,21 @@ class _$_RankingUserDto extends _RankingUserDto {
   @JsonKey(name: 'Distancia')
   final String distancia;
   @override
+  @JsonKey(name: 'Escuela', defaultValue: "")
+  final String escuela;
+  @override
   @JsonKey(name: 'Foto')
   final String foto;
+  @override
+  @JsonKey(name: 'Tiempo', defaultValue: "0")
+  final String tiempo;
   @override
   @JsonKey(name: 'rank', defaultValue: "0")
   final String rank;
 
   @override
   String toString() {
-    return 'RankingUserDto(nombre: $nombre, distancia: $distancia, foto: $foto, rank: $rank)';
+    return 'RankingUserDto(nombre: $nombre, distancia: $distancia, escuela: $escuela, foto: $foto, tiempo: $tiempo, rank: $rank)';
   }
 
   @override
@@ -175,7 +211,9 @@ class _$_RankingUserDto extends _RankingUserDto {
             other is _$_RankingUserDto &&
             const DeepCollectionEquality().equals(other.nombre, nombre) &&
             const DeepCollectionEquality().equals(other.distancia, distancia) &&
+            const DeepCollectionEquality().equals(other.escuela, escuela) &&
             const DeepCollectionEquality().equals(other.foto, foto) &&
+            const DeepCollectionEquality().equals(other.tiempo, tiempo) &&
             const DeepCollectionEquality().equals(other.rank, rank));
   }
 
@@ -185,7 +223,9 @@ class _$_RankingUserDto extends _RankingUserDto {
       runtimeType,
       const DeepCollectionEquality().hash(nombre),
       const DeepCollectionEquality().hash(distancia),
+      const DeepCollectionEquality().hash(escuela),
       const DeepCollectionEquality().hash(foto),
+      const DeepCollectionEquality().hash(tiempo),
       const DeepCollectionEquality().hash(rank));
 
   @JsonKey(ignore: true)
@@ -205,8 +245,12 @@ abstract class _RankingUserDto extends RankingUserDto {
           required final String nombre,
       @JsonKey(name: 'Distancia')
           required final String distancia,
+      @JsonKey(name: 'Escuela', defaultValue: "")
+          required final String escuela,
       @JsonKey(name: 'Foto')
           required final String foto,
+      @JsonKey(name: 'Tiempo', defaultValue: "0")
+          required final String tiempo,
       @JsonKey(name: 'rank', defaultValue: "0")
           required final String rank}) = _$_RankingUserDto;
   const _RankingUserDto._() : super._();
@@ -221,8 +265,14 @@ abstract class _RankingUserDto extends RankingUserDto {
   @JsonKey(name: 'Distancia')
   String get distancia => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'Escuela', defaultValue: "")
+  String get escuela => throw _privateConstructorUsedError;
+  @override
   @JsonKey(name: 'Foto')
   String get foto => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'Tiempo', defaultValue: "0")
+  String get tiempo => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'rank', defaultValue: "0")
   String get rank => throw _privateConstructorUsedError;
