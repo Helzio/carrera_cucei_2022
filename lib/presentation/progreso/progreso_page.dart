@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
+import 'package:carrera_cucei_2022/features/running/provider/running_provider.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:carrera_cucei_2022/presentation/map/map_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class ProgresoPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final meState = ref.watch(rankingmeProvider);
+    final runningState = ref.watch(runningProvider);
+
     return Stack(
       children: [
         ShaderMask(
@@ -288,7 +291,15 @@ class ProgresoPage extends ConsumerWidget {
               height: 48,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  showAboutDialog(context: context);
+                  runningState.when(
+                    initial: () {
+                      ref.read(runningProvider.notifier).setRunning();
+                    },
+                    running: () {
+                      ref.read(runningProvider.notifier).setStop();
+                    },
+                    stop: () {},
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   primary: colorPrimary,

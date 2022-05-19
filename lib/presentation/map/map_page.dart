@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:carrera_cucei_2022/features/running/application/running_state.dart';
+import 'package:carrera_cucei_2022/features/running/provider/running_provider.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +17,7 @@ class MapPage extends ConsumerStatefulWidget {
 }
 
 class _MapPageState extends ConsumerState<MapPage> {
+  bool listen = false;
   final Completer<GoogleMapController> _controller = Completer();
   final Set<Polyline> _polylines = <Polyline>{};
   List<LatLng> polylineCoordinates = [];
@@ -60,28 +63,32 @@ class _MapPageState extends ConsumerState<MapPage> {
     }
 
     location.onLocationChanged.listen((cLoc) {
-      if (currentLocation == null) {
-        currentLocation = cLoc;
-      } else {
-        lastLocation = currentLocation;
-        currentLocation = cLoc;
-      }
-      if (currentLocation != null && lastLocation != null) {
-        polylineCoordinates.add(
-          LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
-        );
-        _polylines.add(
-          Polyline(
-            width: 5,
-            polylineId: const PolylineId("constante"),
-            color: colorPrimary,
-            points: polylineCoordinates,
-          ),
-        );
-        polylineCount++;
-      }
+      if (listen) {
+        if (currentLocation == null) {
+          currentLocation = cLoc;
+        } else {
+          lastLocation = currentLocation;
+          currentLocation = cLoc;
+        }
+        if (currentLocation != null && lastLocation != null) {
+          polylineCoordinates.add(
+            LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
+          );
+          _polylines.add(
+            Polyline(
+              width: 5,
+              polylineId: const PolylineId("constante"),
+              color: colorPrimary,
+              points: polylineCoordinates,
+            ),
+          );
+          polylineCount++;
+        }
 
-      updatePinOnMap();
+        updatePinOnMap();
+      } else {
+        updatePinOnMap();
+      }
     });
   }
 
@@ -90,20 +97,24 @@ class _MapPageState extends ConsumerState<MapPage> {
   }
 
   Future<void> updatePinOnMap() async {
-    // create a new CameraPosition instance
-    // every time the location changes, so the camera
-    // follows the pin as it moves with an animation
-    final CameraPosition cPosition = CameraPosition(
-      zoom: zoom,
-      tilt: tiltValue,
-      target: LatLng(
-        currentLocation!.latitude!,
-        currentLocation!.longitude!,
-      ),
-    );
-
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(cPosition));
+
+    if (currentLocation != null) {
+      final CameraPosition cPosition = CameraPosition(
+        zoom: zoom,
+        tilt: tiltValue,
+        target: LatLng(
+          currentLocation!.latitude!,
+          currentLocation!.longitude!,
+        ),
+      );
+
+      controller.animateCamera(CameraUpdate.newCameraPosition(cPosition));
+    } else {
+      controller
+          .animateCamera(CameraUpdate.newCameraPosition(initialCameraPosition));
+    }
+
     // do this inside the setState() so Flutter gets notified
     // that a widget update is due
     setState(() {});
@@ -111,6 +122,23 @@ class _MapPageState extends ConsumerState<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<RunningState>(runningProvider, (previous, next) {
+      next.when(
+        initial: () => null,
+        running: () {
+          _polylines.clear();
+          polylineCoordinates.clear();
+          Future.microtask(
+            () => setState(() {
+              listen = true;
+              updatePinOnMap();
+            }),
+          );
+        },
+        stop: () {},
+      );
+    });
+
     if (currentLocation != null) {
       initialCameraPosition = CameraPosition(
         target: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),

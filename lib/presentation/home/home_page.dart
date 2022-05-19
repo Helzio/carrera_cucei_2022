@@ -134,8 +134,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               physics: const NeverScrollableScrollPhysics(),
               controller: _controller,
               children: const [
-                RankingWidget(),
                 ProgresoPage(),
+                RankingWidget(),
               ],
             ),
             drawer: const AppDrawer(),
