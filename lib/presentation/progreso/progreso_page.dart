@@ -29,28 +29,9 @@ class ProgresoPage extends ConsumerWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ).createShader(rect),
-          child: Stack(
-            children: [
-              const MapPage(),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 48.0),
-                  child: SizedBox(
-                    height: 48,
-                    child: ElevatedButton.icon(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: colorPrimary,
-                        shape: const StadiumBorder(),
-                      ),
-                      icon: const Icon(MdiIcons.run),
-                      label: const Text("Comenzar a correr"),
-                    ),
-                  ),
-                ),
-              )
-            ],
+          child: const Padding(
+            padding: EdgeInsets.only(top: 160.0),
+            child: MapPage(),
           ),
         ),
         Container(
@@ -105,7 +86,24 @@ class ProgresoPage extends ConsumerWidget {
                                 failure: (f) => 0,
                               ),
                             ),
-                          )
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: FloatingActionButton.small(
+                                backgroundColor: colorPrimary,
+                                child: const Icon(
+                                  Icons.edit,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                                onPressed: () {
+                                  showAboutDialog(context: context);
+                                },
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -282,6 +280,26 @@ class ProgresoPage extends ConsumerWidget {
             ],
           ),
         ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 48.0),
+            child: SizedBox(
+              height: 48,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  showAboutDialog(context: context);
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: colorPrimary,
+                  shape: const StadiumBorder(),
+                ),
+                icon: const Icon(MdiIcons.run),
+                label: const Text("Comenzar a correr"),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }

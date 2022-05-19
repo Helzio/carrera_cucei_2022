@@ -87,7 +87,7 @@ class RankingWidget extends ConsumerWidget {
                                 ),
                               ),
                               Text(
-                                "${listaUsuarios[1].distancia} m",
+                                "${(double.parse(listaUsuarios[1].distancia) / 1000).toStringAsFixed(2)} km",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -143,7 +143,7 @@ class RankingWidget extends ConsumerWidget {
                                 ),
                               ),
                               Text(
-                                "${listaUsuarios[2].distancia} m",
+                                "${(double.parse(listaUsuarios[2].distancia) / 1000).toStringAsFixed(2)} km",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -198,7 +198,7 @@ class RankingWidget extends ConsumerWidget {
                               ),
                             ),
                             Text(
-                              "${listaUsuarios[0].distancia} m",
+                              "${(double.parse(listaUsuarios[0].distancia) / 1000).toStringAsFixed(2)} km",
                               style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
@@ -278,7 +278,7 @@ class RankingWidget extends ConsumerWidget {
                                         ),
                                       ),
                                       Text(
-                                        "${listaUsuarios[index + 3].distancia} m",
+                                        "${(double.parse(listaUsuarios[index + 3].distancia) / 1000).toStringAsFixed(2)} km",
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
