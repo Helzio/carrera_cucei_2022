@@ -1,7 +1,6 @@
 import 'package:carrera_cucei_2022/features/corredor/providers/corredor_provider.dart';
 import 'package:carrera_cucei_2022/features/distancia_recorrida/provider/distancia_recorrida_provider.dart';
 import 'package:carrera_cucei_2022/features/progreso/providers/progreso_provider.dart';
-import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/features/running/application/running_state.dart';
 import 'package:carrera_cucei_2022/features/running/provider/running_provider.dart';
 import 'package:flutter/material.dart';

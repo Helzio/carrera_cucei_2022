@@ -31,7 +31,6 @@ class ProgresoRemoteService {
       if (data == "200") {
         return unit;
       } else {
-        print(data);
         throw ServerException();
       }
     } else {
