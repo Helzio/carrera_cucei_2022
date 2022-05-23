@@ -97,14 +97,14 @@ class _MapPageState extends ConsumerState<MapPage> {
     }
 
     location.onLocationChanged.listen((cLoc) {
-      if (listen) {
-        if (currentLocation == null) {
-          currentLocation = cLoc;
-        } else {
-          lastLocation = currentLocation;
-          currentLocation = cLoc;
-        }
-        if (currentLocation != null && lastLocation != null) {
+      if (currentLocation == null) {
+        currentLocation = cLoc;
+      } else {
+        lastLocation = currentLocation;
+        currentLocation = cLoc;
+      }
+      if (currentLocation != null && lastLocation != null) {
+        if (listen) {
           polylineCoordinates.add(
             LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
           );
@@ -119,11 +119,9 @@ class _MapPageState extends ConsumerState<MapPage> {
           );
           polylineCount++;
         }
-
-        updatePinOnMap();
-      } else {
-        updatePinOnMap();
       }
+
+      updatePinOnMap();
     });
   }
 
@@ -157,7 +155,7 @@ class _MapPageState extends ConsumerState<MapPage> {
   Widget build(BuildContext context) {
     ref.listen<RunningState>(runningProvider, (previous, next) {
       next.when(
-        initial: () => null,
+        initial: () => listen = false,
         running: () {
           _polylines.clear();
           polylineCoordinates.clear();
@@ -168,7 +166,9 @@ class _MapPageState extends ConsumerState<MapPage> {
             }),
           );
         },
-        stop: () {},
+        stop: () {
+          listen = false;
+        },
       );
     });
 

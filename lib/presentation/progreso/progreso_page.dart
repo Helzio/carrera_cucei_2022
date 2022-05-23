@@ -59,7 +59,7 @@ class ProgresoPage extends ConsumerWidget {
               stop: () => CrossFadeState.showSecond,
               running: () => CrossFadeState.showSecond,
             ),
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 1000),
             firstChild: const UserProgress(),
             secondChild: const RunningProgress(),
           ),
