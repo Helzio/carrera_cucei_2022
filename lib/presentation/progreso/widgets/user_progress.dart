@@ -1,16 +1,24 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carrera_cucei_2022/features/ranking/domain/entities/ranking_user.dart';
 import 'package:carrera_cucei_2022/features/rankingme/providers/rankingme_providers.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class UserProgress extends ConsumerWidget {
+class UserProgress extends ConsumerStatefulWidget {
   const UserProgress({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<UserProgress> createState() => _UserProgressState();
+}
+
+class _UserProgressState extends ConsumerState<UserProgress> {
+  RankingUser? cacheUser;
+
+  @override
+  Widget build(BuildContext context) {
     final meState = ref.watch(rankingmeProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,9 +39,13 @@ class UserProgress extends ConsumerWidget {
                       radius: 72,
                       backgroundImage: CachedNetworkImageProvider(
                         meState.maybeWhen(
-                          orElse: () =>
-                              "https://scontent.fgdl10-1.fna.fbcdn.net/v/t39.30808-6/269982262_10209642748421076_5791888956522992241_n.jpg?_nc_cat=109&ccb=1-6&_nc_sid=09cbfe&_nc_eui2=AeHvYbd2S7kBtZQ_hMXZ8O4-PutGADEcY4Q-60YAMRxjhOa67O_0dd1c3NWrOn9CQac&_nc_ohc=DzqVbagSo1AAX_34f6H&_nc_pt=1&_nc_ht=scontent.fgdl10-1.fna&oh=00_AT_cmKUg9HW7qqkBUR6UMzT1gaU_zPeKuGMRKdcinlsgmg&oe=628ADFD3",
-                          loaded: (user) => user.foto,
+                          orElse: () => cacheUser == null
+                              ? "https://carreraapp.000webhostapp.com/imagenes/userDefault.png"
+                              : cacheUser!.foto,
+                          loaded: (user) {
+                            cacheUser = user;
+                            return user.foto;
+                          },
                         ),
                       ),
                     ),
@@ -44,7 +56,9 @@ class UserProgress extends ConsumerWidget {
                         backgroundColor: colorPrimary.withOpacity(.2),
                         color: colorPrimary,
                         value: meState.maybeWhen(
-                          orElse: () => 0,
+                          orElse: () => cacheUser == null
+                              ? double.parse(cacheUser!.distancia) / 5000
+                              : 0,
                           loaded: (user) => double.parse(user.distancia) / 5000,
                           failure: (f) => 0,
                         ),
@@ -96,9 +110,10 @@ class UserProgress extends ConsumerWidget {
                     RichText(
                       text: TextSpan(
                         text: meState.maybeWhen(
-                          orElse: () => "0",
+                          orElse: () =>
+                              cacheUser == null ? cacheUser!.rank : " ",
                           loaded: (user) => user.rank,
-                          failure: (f) => "",
+                          failure: (f) => " ",
                         ),
                         style: const TextStyle(
                           fontSize: 21,
@@ -126,11 +141,14 @@ class UserProgress extends ConsumerWidget {
                     RichText(
                       text: TextSpan(
                         text: meState.maybeWhen(
-                          orElse: () => "0",
+                          orElse: () => cacheUser == null
+                              ? (double.parse(cacheUser!.distancia) / 1000)
+                                  .toStringAsFixed(2)
+                              : "0",
                           loaded: (user) =>
                               (double.parse(user.distancia) / 1000)
                                   .toStringAsFixed(2),
-                          failure: (f) => "",
+                          failure: (f) => "X",
                         ),
                         style: const TextStyle(
                           fontSize: 21,
@@ -167,7 +185,10 @@ class UserProgress extends ConsumerWidget {
                     RichText(
                       text: TextSpan(
                         text: meState.maybeWhen(
-                          orElse: () => "0",
+                          orElse: () => cacheUser == null
+                              ? (double.parse(cacheUser!.tiempo) / 60)
+                                  .toStringAsFixed(2)
+                              : "0",
                           loaded: (user) => (double.parse(user.tiempo) / 60)
                               .toStringAsFixed(2),
                           failure: (f) => "",
@@ -199,7 +220,9 @@ class UserProgress extends ConsumerWidget {
         ),
         Text(
           meState.maybeWhen(
-            orElse: () => "Cargando...",
+            orElse: () => cacheUser == null
+                ? cacheUser!.escuela.toUpperCase()
+                : "Cargando...",
             loaded: (user) => user.escuela.toUpperCase(),
             failure: (f) => "",
           ),
@@ -210,7 +233,7 @@ class UserProgress extends ConsumerWidget {
         ),
         Text(
           meState.maybeWhen(
-            orElse: () => "Cargando...",
+            orElse: () => cacheUser == null ? cacheUser!.nombre : "Cargando...",
             loaded: (user) => user.nombre,
             failure: (f) => "",
           ),
