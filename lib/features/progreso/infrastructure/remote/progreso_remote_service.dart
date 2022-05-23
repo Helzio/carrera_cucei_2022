@@ -1,22 +1,22 @@
-import 'dart:convert';
-
 import 'package:carrera_cucei_2022/features/acore/dio/domain/exceptions/exceptions.dart';
 import 'package:carrera_cucei_2022/features/acore/dio/infrastructure/extensions/extension.dart';
-import 'package:carrera_cucei_2022/features/ranking/infrastructure/dtos/ranking_user_dto.dart';
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class RankingmeRemoteService {
+class ProgresoRemoteService {
   final Dio _dio;
 
-  RankingmeRemoteService(this._dio);
+  ProgresoRemoteService(this._dio);
 
-  Future<RankingUserDto> getRankingme({
+  Future<Unit> registrarProgreso({
     required String codigo,
+    required int metros,
+    required int segundos,
   }) async {
     Response response;
     try {
       response = await _dio.get(
-        "https://carreraapp.000webhostapp.com/rankingme.php?codigo=$codigo",
+        "https://carreraapp.000webhostapp.com/progreso.php?codigo=$codigo&metros=$metros&segundos=$segundos",
       );
     } on DioError catch (e) {
       if (e.isConnectionError) {
@@ -28,16 +28,10 @@ class RankingmeRemoteService {
 
     if (response.statusCode == 200) {
       final data = response.data;
-      if (data.toString().contains("Nombre")) {
-        final stringData = data.toString();
-        return RankingUserDto.fromJson(
-          jsonDecode(stringData) as Map<String, dynamic>,
-        );
-      } else if (data == "400") {
-        throw SqlConectionException();
-      } else if (data == "Error al conectarse") {
-        throw SqlConectionException();
+      if (data == "200") {
+        return unit;
       } else {
+        print(data);
         throw ServerException();
       }
     } else {

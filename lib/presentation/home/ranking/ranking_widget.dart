@@ -331,15 +331,18 @@ class RankingmeWidget extends ConsumerWidget {
         child: Row(
           children: [
             Column(
-              children: const [
+              children: [
                 Text(
-                  "2",
-                  style: TextStyle(
+                  rankingmeState.maybeWhen(
+                    orElse: () => "0",
+                    loaded: (user) => user.rank,
+                  ),
+                  style: const TextStyle(
                     fontSize: 15,
                     color: Colors.white,
                   ),
                 ),
-                Icon(
+                const Icon(
                   Icons.arrow_drop_up,
                   color: colorPrimary,
                   size: 30,

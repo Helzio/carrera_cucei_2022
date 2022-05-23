@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:math' show cos, sqrt, asin;
 
+import 'package:carrera_cucei_2022/features/distancia_recorrida/provider/distancia_recorrida_provider.dart';
 import 'package:carrera_cucei_2022/features/running/application/running_state.dart';
 import 'package:carrera_cucei_2022/features/running/provider/running_provider.dart';
 import 'package:carrera_cucei_2022/presentation/acore/utils/colors_utils.dart';
@@ -44,6 +46,39 @@ class _MapPageState extends ConsumerState<MapPage> {
     setInitialLocation();
   }
 
+  double calculateDistance(
+    double lat1,
+    double lon1,
+    double lat2,
+    double lon2,
+  ) {
+    const p = 0.017453292519943295;
+    const c = cos;
+    final a = 0.5 -
+        c((lat2 - lat1) * p) / 2 +
+        c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p)) / 2;
+    return 12742 * asin(sqrt(a));
+  }
+
+  void calculateTotalDistance() {
+    if (polylineCoordinates.isNotEmpty) {
+      double totalDistance = 0;
+      for (var i = 0; i < polylineCoordinates.length - 1; i++) {
+        totalDistance += calculateDistance(
+          polylineCoordinates[i].latitude,
+          polylineCoordinates[i].longitude,
+          polylineCoordinates[i + 1].latitude,
+          polylineCoordinates[i + 1].longitude,
+        );
+      }
+      try {
+        ref
+            .read(distanciaRecorridaProvider.notifier)
+            .setDistancia(totalDistance);
+      } catch (_) {}
+    }
+  }
+
   Future<void> initLocationService() async {
     _serviceEnabled = await location.serviceEnabled();
     if (!_serviceEnabled) {
@@ -57,7 +92,6 @@ class _MapPageState extends ConsumerState<MapPage> {
     if (_permissionGranted == PermissionStatus.denied) {
       _permissionGranted = await location.requestPermission();
       if (_permissionGranted != PermissionStatus.granted) {
-        print("permiso denegado");
         return;
       }
     }
@@ -74,6 +108,7 @@ class _MapPageState extends ConsumerState<MapPage> {
           polylineCoordinates.add(
             LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
           );
+          calculateTotalDistance();
           _polylines.add(
             Polyline(
               width: 5,
@@ -115,8 +150,6 @@ class _MapPageState extends ConsumerState<MapPage> {
           .animateCamera(CameraUpdate.newCameraPosition(initialCameraPosition));
     }
 
-    // do this inside the setState() so Flutter gets notified
-    // that a widget update is due
     setState(() {});
   }
 

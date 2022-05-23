@@ -85,7 +85,6 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     ref.listen<NavigationState>(navigationProvider, (previous, next) {
-      print(next.page);
       _controller.animateToPage(
         next.page,
         duration: const Duration(milliseconds: 200),
@@ -134,8 +133,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               physics: const NeverScrollableScrollPhysics(),
               controller: _controller,
               children: const [
-                ProgresoPage(),
                 RankingWidget(),
+                ProgresoPage(),
               ],
             ),
             drawer: const AppDrawer(),
